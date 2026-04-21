@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Richman Inspired</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-table th {
+            background-color: var(--light-bg);
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 20px;
+            border: none;
+        }
+
+        .cart-table td {
+            vertical-align: middle;
+            padding: 25px 20px;
+        }
+
+        .cart-product-img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .cart-summary {
+            background-color: var(--light-bg);
+            padding: 30px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .summary-total {
+            font-size: 20px;
+            font-weight: 700;
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .cart-table thead {
+                display: none;
+            }
+
+            .cart-table tr {
+                display: block;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .cart-table td {
+                display: block;
+                text-align: right;
+                padding: 10px 0;
+            }
+
+            .cart-table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .cart-table td.product-cell {
+                text-align: center;
+            }
+
+            .cart-table td.product-cell::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner-outer"></div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span>MAN</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center">
+                <a href="shop.html" class="btn btn-outline-dark btn-sm rounded-0 me-3">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="shop-hero">
+        <div class="container text-center">
+            <h1 class="fw-bold">YOUR SHOPPING CART</h1>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="table cart-table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Item 1 -->
+                                <tr>
+                                    <td class="product-cell" data-label="Product">
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=200"
+                                                class="cart-product-img me-3" alt="Product">
+                                            <div class="text-start">
+                                                <h6 class="fw-bold mb-0">Premium White Oxford</h6>
+                                                <small class="text-muted">Size: M | Color: White</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Price">৳ 2,450</td>
+                                    <td data-label="Quantity">
+                                        <div class="d-flex align-items-center border w-fit" style="max-width: 120px;">
+                                            <button class="btn btn-sm">-</button>
+                                            <input type="text" class="form-control border-0 text-center bg-transparent"
+                                                value="1" readonly>
+                                            <button class="btn btn-sm">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="fw-bold text-primary-custom" data-label="Subtotal">৳ 2,450</td>
+                                    <td><a href="#" class="text-muted"><i class="fa fa-times"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="d-md-flex justify-content-between mt-4">
+                        <div class="input-group mb-3 mb-md-0" style="max-width: 350px;">
+                            <input type="text" class="form-control rounded-0" placeholder="Coupon Code">
+                            <button class="btn btn-outline-dark rounded-0">APPLY</button>
+                        </div>
+                        <button class="btn btn-dark rounded-0 px-4 py-2">UPDATE CART</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar Summary -->
+                <div class="col-lg-4 mt-5 mt-lg-0">
+                    <div class="cart-summary shadow-sm">
+                        <h5 class="fw-bold mb-4">ORDER SUMMARY</h5>
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span class="fw-bold">৳ 2,450</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Shipping</span>
+                            <span>৳ 60</span>
+                        </div>
+                        <div class="summary-item summary-total mt-3">
+                            <span>Total</span>
+                            <span class="text-primary-custom">৳ 2,510</span>
+                        </div>
+                        <a href="checkout.html" class="btn btn-custom w-100 py-3 mt-4">PROCEED TO CHECKOUT</a>
+                        <p class="text-center mt-3 text-muted small"><i class="fa fa-lock me-1"></i> Secure Checkout
+                            Guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">ABOUT US</h5>
+                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We aim to revolutionize
+                        the fashion industry in Bangladesh with our curated collections and exceptional customer
+                        service.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">SUPPORT</h5>
+                    <ul class="mt-4">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="track-order.html">Order Tracking</a></li>
+                        <li><a href="faq.html">Refund & Exchange</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
+                            Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@richman-style.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat - Thu: 10:00 AM - 08:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center border-top py-4 mt-5">
+                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
+                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+        });
+    </script>
+</body>
+
+</html>

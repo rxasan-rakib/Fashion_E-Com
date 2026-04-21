@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | Richman Inspired</title>
+    <meta name="description"
+        content="Your saved items — view, move to cart, or remove products from your Richman Inspired wishlist.">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR — minimal account navbar -->
+    <nav class="navbar main-navbar fixed-top bg-white border-bottom py-2">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <span class="text-primary-custom">RICH</span>MAN
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="my-account.html" class="text-dark small fw-semibold text-decoration-none">
+                    <i class="fa fa-shopping-bag me-1"></i> My Orders
+                </a>
+                <a href="index.html" class="btn btn-outline-dark btn-sm rounded-0 px-3">LOGOUT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ACCOUNT HERO -->
+    <div class="account-hero">
+        <div class="container">
+            <div class="d-flex align-items-center gap-4">
+                <div class="account-avatar">RH</div>
+                <div>
+                    <h2 class="fw-bold m-0 text-uppercase">RAKIBUL HASAN</h2>
+                    <p class="text-muted m-0 small">Customer Since April 2026</p>
+                    <nav aria-label="breadcrumb" class="mt-2">
+                        <ol class="breadcrumb mb-0" style="font-size:13px;">
+                            <li class="breadcrumb-item"><a href="my-account.html"
+                                    class="text-primary-custom">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">My Wishlist</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- SIDEBAR -->
+                <div class="col-lg-3">
+                    <div class="account-sidebar shadow-sm">
+                        <a href="my-account.html" class="account-nav-link"><i class="fa fa-shopping-bag"></i> My
+                            Orders</a>
+                        <a href="wishlist.html" class="account-nav-link active"><i class="fa fa-heart"></i> Wishlist</a>
+                        <a href="profile-edit.html" class="account-nav-link"><i class="fa fa-user-edit"></i> Edit
+                            Profile</a>
+                        <a href="index.html" class="account-nav-link text-danger"><i
+                                class="fa fa-sign-out-alt text-danger"></i> Logout</a>
+                    </div>
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="col-lg-9">
+                    <div class="profile-section-card">
+
+                        <!-- Header bar: title + item count + clear all -->
+                        <div class="wishlist-header-bar">
+                            <h6>
+                                <i class="fa fa-heart text-primary-custom me-2"></i>
+                                My Wishlist
+                                <span class="text-muted fw-normal ms-1" id="wishlistCount">(4 items)</span>
+                            </h6>
+                            <button class="btn-clear-wishlist" onclick="clearAll()" id="clearAllBtn">
+                                <i class="fa fa-trash-alt me-1"></i> Clear All
+                            </button>
+                        </div>
+
+                        <!-- Wishlist Grid -->
+                        <div class="row g-3" id="wishlistGrid">
+
+                            <!-- Item 1 -->
+                            <div class="col-md-6 col-xl-4 wishlist-item" id="item-1">
+                                <div class="wishlist-card">
+                                    <!-- Remove button -->
+                                    <button class="wishlist-remove-btn" onclick="removeItem('item-1')"
+                                        title="Remove from Wishlist" aria-label="Remove item">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <!-- Badge -->
+                                    <span class="wishlist-badge sale">Sale</span>
+                                    <!-- Image -->
+                                    <div class="wishlist-img-wrap">
+                                        <a href="product-detail.html">
+                                            <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop"
+                                                alt="Premium White Oxford Shirt">
+                                        </a>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="wishlist-card-body">
+                                        <a href="product-detail.html" class="wishlist-product-name">Premium White Oxford
+                                            Shirt</a>
+                                        <div class="wishlist-product-price">
+                                            ৳ 2,450
+                                            <span class="old-price">৳ 3,200</span>
+                                        </div>
+                                        <div class="wishlist-product-meta">
+                                            <i class="fa fa-check-circle text-success me-1"></i> In Stock
+                                        </div>
+                                        <button class="btn-move-cart" onclick="moveToCart(this, 'item-1')">
+                                            <i class="fa fa-shopping-bag"></i> Move to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="col-md-6 col-xl-4 wishlist-item" id="item-2">
+                                <div class="wishlist-card">
+                                    <button class="wishlist-remove-btn" onclick="removeItem('item-2')"
+                                        title="Remove from Wishlist" aria-label="Remove item">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <div class="wishlist-img-wrap">
+                                        <a href="product-detail.html">
+                                            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop"
+                                                alt="Navy Slim Fit Blazer">
+                                        </a>
+                                    </div>
+                                    <div class="wishlist-card-body">
+                                        <a href="product-detail.html" class="wishlist-product-name">Navy Slim Fit
+                                            Blazer</a>
+                                        <div class="wishlist-product-price">৳ 8,900</div>
+                                        <div class="wishlist-product-meta">
+                                            <i class="fa fa-check-circle text-success me-1"></i> In Stock
+                                        </div>
+                                        <button class="btn-move-cart" onclick="moveToCart(this, 'item-2')">
+                                            <i class="fa fa-shopping-bag"></i> Move to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="col-md-6 col-xl-4 wishlist-item" id="item-3">
+                                <div class="wishlist-card">
+                                    <button class="wishlist-remove-btn" onclick="removeItem('item-3')"
+                                        title="Remove from Wishlist" aria-label="Remove item">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <span class="wishlist-badge">New</span>
+                                    <div class="wishlist-img-wrap">
+                                        <a href="product-detail.html">
+                                            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop"
+                                                alt="Casual Denim Jeans">
+                                        </a>
+                                    </div>
+                                    <div class="wishlist-card-body">
+                                        <a href="product-detail.html" class="wishlist-product-name">Casual Slim Fit
+                                            Jeans</a>
+                                        <div class="wishlist-product-price">৳ 2,100</div>
+                                        <div class="wishlist-product-meta">
+                                            <i class="fa fa-check-circle text-success me-1"></i> In Stock
+                                        </div>
+                                        <button class="btn-move-cart" onclick="moveToCart(this, 'item-3')">
+                                            <i class="fa fa-shopping-bag"></i> Move to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="col-md-6 col-xl-4 wishlist-item" id="item-4">
+                                <div class="wishlist-card">
+                                    <button class="wishlist-remove-btn" onclick="removeItem('item-4')"
+                                        title="Remove from Wishlist" aria-label="Remove item">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <div class="wishlist-img-wrap">
+                                        <a href="product-detail.html">
+                                            <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=600&auto=format&fit=crop"
+                                                alt="Classic Polo T-Shirt">
+                                        </a>
+                                    </div>
+                                    <div class="wishlist-card-body">
+                                        <a href="product-detail.html" class="wishlist-product-name">Classic Polo
+                                            T-Shirt</a>
+                                        <div class="wishlist-product-price">
+                                            ৳ 1,200
+                                            <span class="old-price">৳ 1,500</span>
+                                        </div>
+                                        <!-- Out of stock example -->
+                                        <div class="wishlist-product-meta">
+                                            <i class="fa fa-times-circle text-danger me-1"></i> Out of Stock
+                                        </div>
+                                        <button class="btn-move-cart" disabled style="opacity:0.5;cursor:not-allowed;"
+                                            title="Currently out of stock">
+                                            <i class="fa fa-ban"></i> Out of Stock
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /wishlistGrid -->
+
+                        <!-- EMPTY STATE (hidden when items exist) -->
+                        <div class="wishlist-empty" id="wishlistEmpty" style="display:none;">
+                            <i class="fa fa-heart-broken wishlist-empty-icon"></i>
+                            <h5>Your wishlist is empty</h5>
+                            <p>Save items you love and come back to buy them later.</p>
+                            <a href="shop.html" class="btn-profile-save text-decoration-none"
+                                style="display:inline-block;">
+                                <i class="fa fa-shopping-bag me-2"></i>Browse Products
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /MAIN CONTENT -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 pb-5">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span><span
+                                class="text-white">MAN</span></span>
+                    </a>
+                    <h5 class="fw-bold pt-3">ABOUT US</h5>
+                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We revolutionize the
+                        fashion industry in Bangladesh with curated collections and exceptional customer service.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">MY ACCOUNT</h5>
+                    <ul class="mt-4">
+                        <li><a href="my-account.html">Dashboard</a></li>
+                        <li><a href="my-account.html">My Orders</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="address-book.html">Addresses</a></li>
+                        <li><a href="profile-edit.html">Edit Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
+                            Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@richman-style.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat – Thu: 10:00 AM – 08:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
+                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="wishlist-toast" id="wishlistToast" role="alert" aria-live="polite">
+        <i class="fa fa-check-circle" style="color:#4caf50;"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* Total item count tracking */
+        let itemCount = 4;
+
+        /* Update count badge in header */
+        function updateCount() {
+            const countEl = document.getElementById('wishlistCount');
+            const grid = document.getElementById('wishlistGrid');
+            const empty = document.getElementById('wishlistEmpty');
+            const clearBtn = document.getElementById('clearAllBtn');
+
+            countEl.textContent = itemCount > 0
+                ? `(${itemCount} item${itemCount > 1 ? 's' : ''})`
+                : '';
+
+            if (itemCount === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'block';
+                clearBtn.style.display = 'none';
+            } else {
+                grid.style.display = 'flex';
+                empty.style.display = 'none';
+                clearBtn.style.display = 'inline-block';
+            }
+        }
+
+        /* Show toast notification */
+        function showToast(message, icon, color) {
+            const toast = document.getElementById('wishlistToast');
+            const iconEl = toast.querySelector('i');
+            const msgEl = document.getElementById('toastMessage');
+            iconEl.className = icon;
+            iconEl.style.color = color || '#4caf50';
+            msgEl.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        /* Remove item from wishlist */
+        function removeItem(id) {
+            const item = document.getElementById(id);
+            if (!item) return;
+
+            /* Animate out */
+            item.style.transition = 'opacity 0.3s, transform 0.3s';
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.9)';
+
+            setTimeout(() => {
+                item.remove();
+                itemCount--;
+                updateCount();
+                showToast('Item removed from wishlist.', 'fa fa-times-circle', '#e53935');
+            }, 300);
+        }
+
+        /* Move to cart (removes from wishlist) */
+        function moveToCart(btn, id) {
+            /* Simulate adding to cart */
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Adding...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                removeItem(id);
+                showToast('Item moved to cart!', 'fa fa-check-circle', '#4caf50');
+            }, 800);
+        }
+
+        /* Clear all wishlist items */
+        function clearAll() {
+            if (!confirm('Are you sure you want to clear your entire wishlist?')) return;
+
+            const items = document.querySelectorAll('.wishlist-item');
+            items.forEach((item, i) => {
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.3s, transform 0.3s';
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9)';
+                    setTimeout(() => item.remove(), 300);
+                }, i * 80);
+            });
+
+            setTimeout(() => {
+                itemCount = 0;
+                updateCount();
+                showToast('Wishlist cleared.', 'fa fa-trash-alt', '#fb8c00');
+            }, items.length * 80 + 350);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login &amp; Register | Richman Inspired</title>
+    <meta name="description" content="Sign in or create an account to enjoy exclusive fashion from Richman Inspired.">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Stylesheet (includes all auth page styles) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+    <main class="auth-card" aria-label="Authentication">
+        <div class="auth-logo">
+            <a href="index.html" title="Back to Homepage" aria-label="Richman Inspired — Go to Homepage">
+                <span class="text-primary-custom">RICH</span><span class="text-dark">MAN</span>
+            </a>
+        </div>
+        <!-- Tabs: LOGIN | REGISTER -->
+        <div class="auth-tabs" role="tablist">
+            <div class="auth-tab active" id="tab-login" role="tab" aria-selected="true" tabindex="0"
+                onclick="switchAuth('login')" onkeypress="if(event.key==='Enter') switchAuth('login')">
+                LOGIN
+            </div>
+            <div class="auth-tab" id="tab-register" role="tab" aria-selected="false" tabindex="0"
+                onclick="switchAuth('register')" onkeypress="if(event.key==='Enter') switchAuth('register')">
+                REGISTER
+            </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="loginForm" role="tabpanel" aria-labelledby="tab-login">
+            <form action="#" method="POST" novalidate>
+
+                <!-- Email / Username -->
+                <div class="mb-3">
+                    <label class="form-label" for="login-email">Email or Username</label>
+                    <input type="text" class="form-control" id="login-email" name="email" placeholder="you@example.com"
+                        autocomplete="username" required>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" class="form-control" id="login-password" name="password"
+                        placeholder="Enter your password" autocomplete="current-password" required>
+                </div>
+
+                <!-- Remember Me + Forgot Password -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                        <label class="form-check-label small" for="remember">Remember Me</label>
+                    </div>
+                    <a href="#" class="small text-primary-custom">Forgot Password?</a>
+                </div>
+
+                <!-- Sign In Button -->
+                <button type="submit" class="btn-signin" id="btn-signin">SIGN IN</button>
+            </form>
+
+            <!-- Social Login -->
+            <div class="auth-divider">Or Login with</div>
+            <div class="social-login">
+                <a href="#" class="social-btn" id="btn-facebook" aria-label="Login with Facebook">
+                    <i class="fab fa-facebook-f" style="color:#1877F2;"></i>
+                    Facebook
+                </a>
+                <a href="#" class="social-btn" id="btn-google" aria-label="Login with Google">
+                    <i class="fab fa-google" style="color:#EA4335;"></i>
+                    Google
+                </a>
+            </div>
+
+            <!-- Switch to Register -->
+            <p class="text-center mt-4 mb-0 small text-muted">
+                Don't have an account?
+                <a href="#" class="text-primary-custom fw-semibold"
+                    onclick="switchAuth('register'); return false;">Create one</a>
+            </p>
+        </div>
+        <!-- /loginForm -->
+
+        <!-- =============================================
+             REGISTER FORM — hidden by default
+        ============================================== -->
+        <div id="registerForm" role="tabpanel" aria-labelledby="tab-register" style="display:none;">
+            <form action="#" method="POST" novalidate>
+
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label class="form-label" for="reg-name">Full Name</label>
+                    <input type="text" class="form-control" id="reg-name" name="full_name" placeholder="John Doe"
+                        autocomplete="name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label" for="reg-email">Email Address</label>
+                    <input type="email" class="form-control" id="reg-email" name="email" placeholder="you@example.com"
+                        autocomplete="email" required>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label class="form-label" for="reg-password">Password</label>
+                    <input type="password" class="form-control" id="reg-password" name="password"
+                        placeholder="Create a strong password" autocomplete="new-password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                    <label class="form-label" for="reg-confirm">Confirm Password</label>
+                    <input type="password" class="form-control" id="reg-confirm" name="confirm_password"
+                        placeholder="Repeat your password" autocomplete="new-password" required>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="mb-4 small text-muted">
+                    By registering, you agree to our
+                    <a href="#" class="text-primary-custom">Terms &amp; Conditions</a>
+                    and
+                    <a href="#" class="text-primary-custom">Privacy Policy</a>.
+                </div>
+
+                <!-- Create Account Button -->
+                <button type="submit" class="btn-register" id="btn-create-account">CREATE ACCOUNT</button>
+            </form>
+
+            <!-- Switch to Login -->
+            <p class="text-center mt-4 mb-0 small text-muted">
+                Already have an account?
+                <a href="#" class="text-primary-custom fw-semibold" onclick="switchAuth('login'); return false;">Sign
+                    in</a>
+            </p>
+        </div>
+        <!-- /registerForm -->
+
+    </main>
+    <!-- /auth-card -->
+
+    <!-- Footer note under card -->
+    <div class="auth-footer-note">
+        &copy; 2026 <a href="index.html">Richman Inspired</a>. All rights reserved.
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tab switching — only necessary JS kept -->
+    <script>
+        /**
+         * switchAuth — toggles between Login and Register panels
+         * @param {string} type - 'login' | 'register'
+         */
+        function switchAuth(type) {
+            const tabLogin = document.getElementById('tab-login');
+            const tabRegister = document.getElementById('tab-register');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (type === 'login') {
+                tabLogin.classList.add('active');
+                tabRegister.classList.remove('active');
+                tabLogin.setAttribute('aria-selected', 'true');
+                tabRegister.setAttribute('aria-selected', 'false');
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                tabRegister.classList.add('active');
+                tabLogin.classList.remove('active');
+                tabRegister.setAttribute('aria-selected', 'true');
+                tabLogin.setAttribute('aria-selected', 'false');
+                registerForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

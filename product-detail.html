@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium White Oxford Shirt | Richman Inspired</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-gallery img {
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .product-gallery .thumb-img {
+            aspect-ratio: 3/4;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .product-gallery .thumb-img.active {
+            border-color: var(--primary-color);
+        }
+
+        .main-img-container {
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .main-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-tags span {
+            font-size: 13px;
+            margin-right: 15px;
+            color: #777;
+        }
+
+        .selector-item {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .selector-item:hover,
+        .selector-item.active {
+            border-color: var(--secondary-color);
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .color-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .color-dot.active {
+            border-color: var(--primary-color);
+        }
+
+        .qty-input {
+            width: 80px;
+            text-align: center;
+            border-radius: 0;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner-outer"></div>
+    </div>
+
+    <!-- 1. Top Header & Navbar (Same as Shop) -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span>MAN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Men</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Women</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">New Arrivals</a></li>
+                </ul>
+                <div class="navbar-icons border-start ps-lg-4 d-flex align-items-center">
+                    <a href="login.html"><i class="fa fa-user"></i></a>
+                    <a href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Gallery -->
+                <div class="col-lg-6 mb-5 product-gallery">
+                    <div class="row g-2">
+                        <div class="col-12 main-img-container mb-2">
+                            <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=1200&auto=format&fit=crop"
+                                id="mainProductImg" alt="Main Product">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=300&auto=format&fit=crop"
+                                class="img-fluid thumb-img active w-100" onclick="changeImg(this.src, this)">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=300&auto=format&fit=crop"
+                                class="img-fluid thumb-img w-100" onclick="changeImg(this.src, this)">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=300&auto=format&fit=crop"
+                                class="img-fluid thumb-img w-100" onclick="changeImg(this.src, this)">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=300&auto=format&fit=crop"
+                                class="img-fluid thumb-img w-100" onclick="changeImg(this.src, this)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="product-info-tags mb-2">
+                        <span><i class="fa fa-tag me-1"></i> Formal Shirt</span>
+                        <span><i class="fa fa-check-circle text-success me-1"></i> In Stock</span>
+                    </div>
+                    <h1 class="fw-bold mb-3">Premium White Oxford Shirt</h1>
+                    <div class="fs-3 text-primary-custom fw-bold mb-4">৳ 2,450</div>
+
+                    <div class="mb-4">
+                        <div class="text-warning mb-2">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star text-muted"></i>
+                            <span class="text-muted ms-2">(15 Customer Reviews)</span>
+                        </div>
+                        <p class="text-muted">A versatile wardrobe staple crafted from high-quality 100% cotton oxford
+                            fabric. Features a crisp button-down collar and tailored fit for a sharp, modern silhouette.
+                        </p>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Select Size</h6>
+                        <div class="selector-item">S</div>
+                        <div class="selector-item active">M</div>
+                        <div class="selector-item">L</div>
+                        <div class="selector-item">XL</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Color</h6>
+                        <span class="color-dot active" style="background-color: white; border: 1px solid #ddd;"></span>
+                        <span class="color-dot" style="background-color: #add8e6;"></span>
+                        <span class="color-dot" style="background-color: #f5f5dc;"></span>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-5">
+                        <input type="number" class="form-control qty-input h-100 py-3 me-3" value="1" min="1">
+                        <a href="cart.html" class="btn btn-custom flex-grow-1 py-3"><i
+                                class="fa fa-shopping-bag me-2"></i> ADD TO CART</a>
+                        <button class="btn btn-outline-dark ms-2 py-3 px-4"><i class="fa fa-heart"></i></button>
+                    </div>
+
+                    <div class="border-top pt-4">
+                        <p class="mb-1"><strong>SKU:</strong> RM-9901-WH</p>
+                        <p class="mb-1"><strong>Categories:</strong> Men, Tops, Formal</p>
+                        <div class="mt-3">
+                            <span class="me-3">Share:</span>
+                            <a href="https://facebook.com" class="me-2 text-muted"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" class="me-2 text-muted"><i class="fab fa-twitter"></i></a>
+                            <a href="product-detail.html" class="me-2 text-muted"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mt-5 pt-5">
+                <ul class="nav nav-tabs justify-content-center mb-4 border-0" id="productTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active border-0 text-uppercase fw-bold" data-bs-toggle="tab"
+                            data-bs-target="#desc">Description</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link border-0 text-uppercase fw-bold" data-bs-toggle="tab"
+                            data-bs-target="#spec">Specifications</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link border-0 text-uppercase fw-bold" data-bs-toggle="tab"
+                            data-bs-target="#rev">Reviews (15)</button>
+                    </li>
+                </ul>
+                <div class="tab-content border p-4 bg-light">
+                    <div class="tab-pane fade show active" id="desc">
+                        <p>Detailed info about the product goes here. We use only the finest cotton for our oxford
+                            shirts...</p>
+                    </div>
+                    <div class="tab-pane fade" id="spec">
+                        <ul>
+                            <li>Fabric: 100% Premium Cotton</li>
+                            <li>Fit: Slim Fit</li>
+                            <li>Collar: Button-down</li>
+                            <li>Care: Machine wash cold</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="rev">
+                        <p>Customer reviews would be listed here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold mb-4">RELATED PRODUCTS</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-card shadow-sm bg-white p-2">
+                        <div class="product-img-wrapper" style="height: 300px;">
+                            <a href="product-detail.html">
+                                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop"
+                                    class="img-fluid w-100" alt="Related">
+                            </a>
+                        </div>
+                        <div class="text-center p-3">
+                            <h3 class="product-title"><a href="product-detail.html">Navy Blazer</a></h3>
+                            <div class="product-price">৳ 8,900</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat 3 more... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">ABOUT US</h5>
+                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We aim to revolutionize
+                        the fashion industry in Bangladesh with our curated collections and exceptional customer
+                        service.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">SUPPORT</h5>
+                    <ul class="mt-4">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="track-order.html">Order Tracking</a></li>
+                        <li><a href="faq.html">Refund & Exchange</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
+                            Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@richman-style.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat - Thu: 10:00 AM - 08:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
+                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeImg(src, el) {
+            document.getElementById('mainProductImg').src = src;
+            document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+        }
+        window.addEventListener('load', function () {
+            setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+        });
+    </script>
+</body>
+
+</html>

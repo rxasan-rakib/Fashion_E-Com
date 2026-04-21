@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Richman Inspired</title>
+    <meta name="description"
+        content="Update your personal information, avatar and password for your Richman Inspired account.">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar main-navbar fixed-top bg-white border-bottom py-2">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <span class="text-primary-custom">RICH</span>MAN
+            </a>
+            <!-- Right side links -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="my-account.html" class="text-dark small fw-semibold text-decoration-none">
+                    <i class="fa fa-shopping-bag"></i> My Orders
+                </a>
+                <a href="index.html" class="btn btn-outline-dark btn-sm rounded-0 px-3">LOGOUT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="account-hero">
+        <div class="container">
+            <div class="d-flex align-items-center gap-4">
+                <!-- Avatar circle (initials) -->
+                <div class="account-avatar" id="heroAvatar">RH</div>
+                <div>
+                    <h2 class="fw-bold m-0 text-uppercase">RAKIBUL HASAN</h2>
+                    <p class="text-muted m-0 small">Customer Since April 2026</p>
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mt-2">
+                        <ol class="breadcrumb mb-0" style="font-size:13px;">
+                            <li class="breadcrumb-item"><a href="my-account.html"
+                                    class="text-primary-custom">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- ---- SIDEBAR ---- -->
+                <div class="col-lg-3">
+                    <div class="account-sidebar shadow-sm">
+                        <a href="my-account.html" class="account-nav-link"><i class="fa fa-shopping-bag"></i> My
+                            Orders</a>
+                        <a href="wishlist.html" class="account-nav-link"><i class="fa fa-heart"></i> Wishlist</a>
+                        <a href="profile-edit.html" class="account-nav-link active"><i class="fa fa-user-edit"></i> Edit
+                            Profile</a>
+                        <a href="index.html" class="account-nav-link text-danger"><i
+                                class="fa fa-sign-out-alt text-danger"></i> Logout</a>
+                    </div>
+                </div>
+                <!-- SIDEBAR -->
+
+                <!-- MAIN CONTENT -->
+                <div class="col-lg-9">
+
+                    <div class="profile-section-card">
+                        <h6 class="profile-section-title">
+                            <i class="fa fa-camera me-2 text-primary-custom"></i>Profile Photo
+                        </h6>
+
+                        <div class="avatar-upload-wrap">
+                            <!-- Clickable avatar preview -->
+                            <div class="avatar-preview" id="avatarPreview"
+                                onclick="document.getElementById('avatarInput').click()" title="Click to change photo">
+                                <span id="avatarInitials">RH</span>
+                                <img id="avatarImg" src="" alt="Profile Photo">
+                            </div>
+
+                            <!-- Upload controls -->
+                            <div class="avatar-upload-actions">
+                                <!-- Hidden file input -->
+                                <input type="file" id="avatarInput" accept="image/*" class="d-none">
+
+                                <button type="button"
+                                    class="btn btn-outline-dark btn-sm rounded-0 px-4 py-2 fw-semibold"
+                                    onclick="document.getElementById('avatarInput').click()">
+                                    <i class="fa fa-upload me-2"></i>Upload New Photo
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm rounded-0 px-3 py-2 ms-2"
+                                    id="removeAvatarBtn" onclick="removeAvatar()" style="display:none;">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                <p>Accepted: JPG, PNG, WEBP &nbsp;·&nbsp; Max size: 2MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section-card">
+                        <h6 class="profile-section-title">
+                            <i class="fa fa-user me-2 text-primary-custom"></i>Personal Information
+                        </h6>
+
+                        <form id="personalInfoForm" class="profile-form" novalidate>
+                            <div class="row g-3">
+
+                                <!-- First Name -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="firstName">First Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="firstName" name="first_name"
+                                        value="Rakibul" placeholder="First name" autocomplete="given-name" required>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="lastName">Last Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="lastName" name="last_name" value="Hasan"
+                                        placeholder="Last name" autocomplete="family-name" required>
+                                </div>
+
+                                <!-- Email (read-only — change via separate flow) -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="email">
+                                        Email Address
+                                        <span class="badge bg-secondary ms-1 fw-normal"
+                                            style="font-size:10px;">Verified</span>
+                                    </label>
+                                    <input type="email" class="form-control bg-light" id="email" name="email"
+                                        value="rakibul@example.com" readonly
+                                        title="Contact support to change your email">
+                                    <div class="form-text">To change your email, <a href="contact.html"
+                                            class="text-primary-custom">contact support</a>.</div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="phone">Phone Number <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        value="+880 1700 000000" placeholder="+880 1XXX XXXXXX" autocomplete="tel"
+                                        required>
+                                </div>
+
+                                <!-- Date of Birth -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="dob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" name="dob" value="2000-01-01">
+                                </div>
+
+                                <!-- Gender -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="gender">Gender</label>
+                                    <select class="form-select" id="gender" name="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="male" selected>Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer_not">Prefer not to say</option>
+                                    </select>
+                                </div>
+
+                                <!-- Action buttons -->
+                                <div class="col-12 d-flex gap-3 flex-wrap mt-2">
+                                    <button type="submit" class="btn-profile-save" id="saveInfoBtn">
+                                        <i class="fa fa-check me-2"></i>Save Changes
+                                    </button>
+                                    <a href="my-account.html" class="btn-profile-cancel">Cancel</a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="profile-section-card">
+                        <h6 class="profile-section-title">
+                            <i class="fa fa-lock me-2 text-primary-custom"></i>Change Password
+                        </h6>
+
+                        <form id="passwordForm" class="profile-form" novalidate>
+                            <div class="row g-3">
+
+                                <!-- Current Password -->
+                                <div class="col-12">
+                                    <label class="form-label" for="currentPwd">Current Password <span
+                                            class="text-danger">*</span></label>
+                                    <div class="pwd-toggle-wrap">
+                                        <input type="password" class="form-control" id="currentPwd"
+                                            name="current_password" placeholder="Enter your current password"
+                                            autocomplete="current-password" required>
+                                        <button type="button" class="pwd-eye-btn"
+                                            onclick="togglePwd('currentPwd', this)"
+                                            aria-label="Toggle password visibility">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- New Password -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="newPwd">New Password <span
+                                            class="text-danger">*</span></label>
+                                    <div class="pwd-toggle-wrap">
+                                        <input type="password" class="form-control" id="newPwd" name="new_password"
+                                            placeholder="Minimum 8 characters" autocomplete="new-password"
+                                            oninput="checkStrength(this.value)" required>
+                                        <button type="button" class="pwd-eye-btn" onclick="togglePwd('newPwd', this)"
+                                            aria-label="Toggle password visibility">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Strength bar -->
+                                    <div class="pwd-strength-bar">
+                                        <div class="pwd-strength-fill" id="strengthFill"></div>
+                                    </div>
+                                    <div class="form-text" id="strengthText"></div>
+                                </div>
+
+                                <!-- Confirm New Password -->
+                                <div class="col-md-6">
+                                    <label class="form-label" for="confirmPwd">Confirm New Password <span
+                                            class="text-danger">*</span></label>
+                                    <div class="pwd-toggle-wrap">
+                                        <input type="password" class="form-control" id="confirmPwd"
+                                            name="confirm_password" placeholder="Repeat new password"
+                                            autocomplete="new-password" required>
+                                        <button type="button" class="pwd-eye-btn"
+                                            onclick="togglePwd('confirmPwd', this)"
+                                            aria-label="Toggle password visibility">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-text" id="matchText"></div>
+                                </div>
+
+                                <!-- Password requirements hint -->
+                                <div class="col-12">
+                                    <div class="alert alert-light border rounded-0 py-2 px-3 small text-muted mb-0">
+                                        <i class="fa fa-info-circle me-1 text-primary-custom"></i>
+                                        Password must be at least <strong>8 characters</strong> and include an uppercase
+                                        letter, a number, and a special character.
+                                    </div>
+                                </div>
+
+                                <!-- Action buttons -->
+                                <div class="col-12 d-flex gap-3 flex-wrap mt-2">
+                                    <button type="submit" class="btn-profile-save" id="savePwdBtn">
+                                        <i class="fa fa-key me-2"></i>Update Password
+                                    </button>
+                                    <button type="reset" class="btn-profile-cancel">Clear</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <!-- CARD 3 -->
+
+                </div>
+                <!-- MAIN CONTENT -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 pb-5">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span><span
+                                class="text-white">MAN</span></span>
+                    </a>
+                    <h5 class="fw-bold pt-3">ABOUT US</h5>
+                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We revolutionize the
+                        fashion industry in Bangladesh with curated collections and exceptional customer service.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">MY ACCOUNT</h5>
+                    <ul class="mt-4">
+                        <li><a href="my-account.html">Dashboard</a></li>
+                        <li><a href="my-account.html">My Orders</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="address-book.html">Addresses</a></li>
+                        <li><a href="profile-edit.html">Edit Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i>Level 10, Bashundhara City
+                            Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i>+880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i>help@richman-style.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i>Sat – Thu: 10:00 AM – 08:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
+                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS TOAST -->
+    <div class="profile-toast" id="profileToast" role="alert" aria-live="polite">
+        <i class="fa fa-check-circle"></i>
+        <span id="toastMessage">Changes saved successfully!</span>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* AVATAR UPLOAD — preview image before upload */
+        const avatarInput = document.getElementById('avatarInput');
+        const avatarImg = document.getElementById('avatarImg');
+        const avatarInit = document.getElementById('avatarInitials');
+        const removeBtn = document.getElementById('removeAvatarBtn');
+        const heroAvatar = document.getElementById('heroAvatar');
+
+        avatarInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (!file) return;
+
+            // Validate size (max 2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('File too large. Maximum size is 2MB.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                avatarImg.src = e.target.result;
+                avatarImg.style.display = 'block';
+                avatarInit.style.display = 'none';
+                removeBtn.style.display = 'inline-block';
+
+                // Mirror preview in hero
+                heroAvatar.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Avatar">`;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        /* Remove avatar — restore initials */
+        function removeAvatar() {
+            avatarImg.src = '';
+            avatarImg.style.display = 'none';
+            avatarInit.style.display = 'block';
+            removeBtn.style.display = 'none';
+            avatarInput.value = '';
+            heroAvatar.textContent = 'RH';
+        }
+
+        /* TOGGLE PASSWORD VISIBILITY */
+        function togglePwd(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fa fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fa fa-eye';
+            }
+        }
+
+        /* PASSWORD STRENGTH METER */
+        function checkStrength(pwd) {
+            const fill = document.getElementById('strengthFill');
+            const text = document.getElementById('strengthText');
+
+            let score = 0;
+            if (pwd.length >= 8) score++;
+            if (/[A-Z]/.test(pwd)) score++;
+            if (/[0-9]/.test(pwd)) score++;
+            if (/[^A-Za-z0-9]/.test(pwd)) score++;
+
+            const levels = [
+                { label: '', color: '', width: '0%' },
+                { label: 'Weak', color: '#e53935', width: '25%' },
+                { label: 'Fair', color: '#fb8c00', width: '50%' },
+                { label: 'Good', color: '#43a047', width: '75%' },
+                { label: 'Strong', color: '#1b5e20', width: '100%' },
+            ];
+
+            const lvl = levels[score] || levels[0];
+            fill.style.width = lvl.width;
+            fill.style.backgroundColor = lvl.color;
+            text.textContent = lvl.label ? `Strength: ${lvl.label}` : '';
+            text.style.color = lvl.color;
+
+            // Live match check
+            const confirm = document.getElementById('confirmPwd').value;
+            if (confirm) checkMatch(confirm);
+        }
+
+        /* PASSWORD MATCH CHECK */
+        document.getElementById('confirmPwd').addEventListener('input', function () {
+            checkMatch(this.value);
+        });
+
+        function checkMatch(confirmVal) {
+            const newPwd = document.getElementById('newPwd').value;
+            const matchTxt = document.getElementById('matchText');
+            if (!confirmVal) { matchTxt.textContent = ''; return; }
+
+            if (newPwd === confirmVal) {
+                matchTxt.textContent = '✓ Passwords match';
+                matchTxt.style.color = '#43a047';
+            } else {
+                matchTxt.textContent = '✗ Passwords do not match';
+                matchTxt.style.color = '#e53935';
+            }
+        }
+
+        /* SHOW TOAST NOTIFICATION */
+        function showToast(message) {
+            const toast = document.getElementById('profileToast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        /* PERSONAL INFO FORM — submit handler */
+        document.getElementById('personalInfoForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!this.checkValidity()) {
+                this.classList.add('was-validated');
+                return;
+            }
+            // Simulate save (replace with fetch/AJAX for Laravel backend)
+            const btn = document.getElementById('saveInfoBtn');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Saving...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa fa-check me-2"></i>Save Changes';
+                btn.disabled = false;
+                showToast('Profile updated successfully!');
+            }, 1000);
+        });
+
+        /* PASSWORD FORM — submit handler */
+        document.getElementById('passwordForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const newPwd = document.getElementById('newPwd').value;
+            const confirmPwd = document.getElementById('confirmPwd').value;
+
+            if (!this.checkValidity()) {
+                this.classList.add('was-validated');
+                return;
+            }
+            if (newPwd !== confirmPwd) {
+                alert('New passwords do not match. Please try again.');
+                return;
+            }
+            if (newPwd.length < 8) {
+                alert('Password must be at least 8 characters.');
+                return;
+            }
+
+            // Simulate save
+            const btn = document.getElementById('savePwdBtn');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Updating...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa fa-key me-2"></i>Update Password';
+                btn.disabled = false;
+                this.reset();
+                document.getElementById('strengthFill').style.width = '0%';
+                document.getElementById('strengthText').textContent = '';
+                document.getElementById('matchText').textContent = '';
+                showToast('Password changed successfully!');
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>

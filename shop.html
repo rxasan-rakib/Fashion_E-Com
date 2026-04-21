@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Products | Richman Inspired</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-hero {
+            background: var(--light-bg);
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-section h6 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .filter-list li {
+            margin-bottom: 10px;
+        }
+
+        .filter-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .size-box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .size-box:hover,
+        .size-box.active {
+            background: var(--secondary-color);
+            color: var(--white);
+            border-color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner-outer"></div>
+    </div>
+
+    <!-- 1. Top Header Bar -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span><i class="fa fa-phone me-2"></i> +880 123 456 789</span>
+                    <span class="ms-4"><i class="fa fa-envelope me-2"></i> info@richman-style.com</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span>MAN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Men</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Women</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">New Arrivals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Sale</a></li>
+                </ul>
+                <div class="navbar-icons border-start ps-lg-4 d-flex align-items-center">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></a>
+                    <a href="login.html"><i class="fa fa-user"></i></a>
+                    <a href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero / Breadcrumbs -->
+    <section class="shop-hero">
+        <div class="container text-center">
+            <h1 class="fw-bold">MENS COLLECTION</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center m-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Shop Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="filter-section mb-5">
+                        <h6>Categories</h6>
+                        <ul class="filter-list mt-3">
+                            <li><a href="shop.html">Formal Shirts (12)</a></li>
+                            <li><a href="shop.html">Casual Shirts (24)</a></li>
+                            <li><a href="shop.html">Denim Pants (32)</a></li>
+                            <li><a href="shop.html">Suits & Blazers (8)</a></li>
+                            <li><a href="shop.html">Accessories (15)</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-section mb-5">
+                        <h6>Filter By Price</h6>
+                        <div class="mt-3">
+                            <input type="range" class="form-range" min="500" max="10000" step="100">
+                            <div class="d-flex justify-content-between mt-2">
+                                <span>৳ 500</span>
+                                <span>৳ 10,000</span>
+                            </div>
+                            <button class="btn btn-custom w-100 mt-3 py-2 btn-sm">Filter</button>
+                        </div>
+                    </div>
+                    <div class="filter-section mb-5">
+                        <h6>Select Size</h6>
+                        <div class="mt-3">
+                            <span class="size-box">S</span>
+                            <span class="size-box active">M</span>
+                            <span class="size-box">L</span>
+                            <span class="size-box">XL</span>
+                            <span class="size-box">XXL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="m-0 text-muted">Showing 1–12 of 64 results</p>
+                        <select class="form-select w-auto rounded-0">
+                            <option>Default Sorting</option>
+                            <option>Sort by Price: Low to High</option>
+                            <option>Sort by Price: High to Low</option>
+                            <option>Sort by Newness</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <!-- Product Item 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100 product-image-secondary" alt="Hover">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Premium White Oxford</a>
+                                    </h3>
+                                    <div class="product-price">৳ 2,450</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repeat products to fill grid... (I will add a few more variations) -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                        <img src="https://images.unsplash.com/photo-1594932224828-b4b059b6f684?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100 product-image-secondary" alt="Hover">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Classic Navy Blazer</a></h3>
+                                    <div class="product-price">৳ 8,900</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100 product-image-secondary" alt="Hover">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Indigo Denim Pants</a></h3>
+                                    <div class="product-price">৳ 3,200</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100 product-image-secondary" alt="Hover">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Sky Blue Polo</a></h3>
+                                    <div class="product-price">৳ 1,850</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ... (Adding 5 more for layout) -->
+                        <!-- Product 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Premium Black Tee</a></h3>
+                                    <div class="product-price">৳ 950</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card shadow-sm bg-white p-2">
+                                <div class="product-img-wrapper">
+                                    <a href="product-detail.html">
+                                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=600&auto=format&fit=crop"
+                                            class="img-fluid w-100" alt="Product">
+                                    </a>
+                                    <div class="product-actions">
+                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                                class="fa fa-shopping-bag"></i></a>
+                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a href="#" class="action-btn" title="Wishlist"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <h3 class="product-title"><a href="product-detail.html">Linen Summer Shirt</a></h3>
+                                    <div class="product-price">৳ 2,100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link rounded-0" href="#">Prev</a></li>
+                            <li class="page-item active"><a class="page-link rounded-0" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-0" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-0" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link rounded-0" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">ABOUT US</h5>
+                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We aim to revolutionize
+                        the fashion industry in Bangladesh with our curated collections and exceptional customer
+                        service.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="fw-bold">SUPPORT</h5>
+                    <ul class="mt-4">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="track-order.html">Order Tracking</a></li>
+                        <li><a href="faq.html">Refund & Exchange</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
+                            Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@richman-style.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat - Thu: 10:00 AM - 08:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center border-top py-4 mt-5">
+                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
+                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 500);
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
