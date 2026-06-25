@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile | Richman Inspired</title>
+    <title>Edit Profile | ZenWares</title>
     <meta name="description"
-        content="Update your personal information, avatar and password for your Richman Inspired account.">
+        content="Update your personal information, avatar and password for your ZenWares account.">
 
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,21 +17,193 @@
 </head>
 
 <body>
-    <nav class="navbar main-navbar fixed-top bg-white border-bottom py-2">
+
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner-outer"></div>
+    </div>
+
+    <!-- 1. Top Header Bar -->
+    <div class="top-bar d-none d-md-block">
         <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand fw-bold fs-3" href="index.html">
-                <span class="text-primary-custom">RICH</span>MAN
-            </a>
-            <!-- Right side links -->
-            <div class="d-flex align-items-center gap-3">
-                <a href="my-account.html" class="text-dark small fw-semibold text-decoration-none">
-                    <i class="fa fa-shopping-bag"></i> My Orders
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <span><i class="fa fa-phone me-2"></i> +880 123 456 789</span>
+                    <span class="ms-4"><i class="fa fa-envelope me-2"></i> info@zenwares.com</span>
+                </div>
+                <div class="col-md-4">
+                    <div class="topbar-marquee overflow-hidden">
+                        <div class="topbar-marquee-content">
+                            Free Shipping on Orders Over ৳5000 • New Arrivals Every Week • 30 Days Easy Returns • 24/7 Customer Support • Free Shipping on Orders Over ৳5000 • New Arrivals Every Week • 30 Days Easy Returns • 24/7 Customer Support
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <!-- Toggler for Sidebar -->
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <span class="fw-bold fs-3"><span class="text-primary-custom">ZEN</span>WARES</span>
                 </a>
-                <a href="index.html" class="btn btn-outline-dark btn-sm rounded-0 px-3">LOGOUT</a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="d-none d-lg-flex collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Collections
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container-fluid">
+                                <div class="row g-4 p-3">
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Men's Wear</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Panjabi</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Kabli Set</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Jubba</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Polo Shirt</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">T-Shirt</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Kids' Wear</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Panjabi (Kids)</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Kabli Set (Kids)</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Jubba (Kids)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Campaigns</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Flash Sale</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Eid Collection</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Trending Now</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Showrooms</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="contact.html">Dhaka Outlets</a></li>
+                                            <li><a class="dropdown-item" href="contact.html">Chittagong Outlets</a></li>
+                                            <li><a class="dropdown-item" href="contact.html">Store Locator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Campaign</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Outlets</a></li>
+                </ul>
+                <div class="navbar-icons border-start ps-lg-4 d-flex align-items-center position-relative">
+                    <div class="search-container">
+                        <a href="#" class="search-trigger" id="searchTrigger"><i class="fa fa-search"></i></a>
+                        <div class="search-popup" id="searchPopup">
+                            <form action="shop.html" method="GET" class="d-flex">
+                                <input type="text" name="q" class="form-control" placeholder="Search products...">
+                                <button type="submit" class="btn btn-custom"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <a href="my-account.html"><i class="fa fa-user"></i></a>
+                    <a href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </div>
+
+            <!-- Mobile Icons -->
+            <div class="navbar-icons-mobile d-lg-none d-flex align-items-center">
+                <div class="search-container">
+                    <a href="#" class="search-trigger" id="searchTriggerMobile"><i class="fa fa-search"></i></a>
+                    <div class="search-popup" id="searchPopupMobile">
+                        <form action="shop.html" method="GET" class="d-flex">
+                            <input type="text" name="q" class="form-control" placeholder="Search products...">
+                            <button type="submit" class="btn btn-custom"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <a href="my-account.html"><i class="fa fa-user"></i></a>
+                <a href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" data-bs-scroll="true" data-bs-backdrop="true">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold fs-3"><span class="text-primary-custom">ZEN</span>WARES</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#collectionsMenu">
+                        Collections <i class="fa fa-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="collectionsMenu">
+                        <div class="card card-body border-0 ps-4 py-2">
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2 mt-2">Men's Wear</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Panjabi</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Kabli Set</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Jubba</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Polo Shirt</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">T-Shirt</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Kids' Wear</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Panjabi (Kids)</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Kabli Set (Kids)</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Jubba (Kids)</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Campaigns</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Flash Sale</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Eid Collection</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Trending Now</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Showrooms</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Dhaka Outlets</a></li>
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Chittagong Outlets</a></li>
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Store Locator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link active" href="shop.html">Categories</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="shop.html">Campaign</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="shop.html">Outlets</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <div class="account-hero">
         <div class="container">
@@ -274,18 +446,18 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="mt-5">
+    <!-- 9. Footer UI -->
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 pb-5">
                     <a class="navbar-brand" href="index.html">
-                        <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span><span
-                                class="text-white">MAN</span></span>
+                        <span class="fw-bold fs-3"><span class="text-primary-custom">ZEN</span><span
+                                class="text-white">WARES</span></span>
                     </a>
                     <h5 class="fw-bold pt-3">ABOUT US</h5>
-                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We revolutionize the
-                        fashion industry in Bangladesh with curated collections and exceptional customer service.</p>
+                    <p class="mt-4">ZenWares stands for premium quality and sophisticated style. We aim to revolutionize
+                        the fashion industry in Bangladesh with our curated collections.</p>
                     <div class="mt-4">
                         <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
@@ -300,33 +472,30 @@
                         <li><a href="shop.html">Shop All</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6 mb-5">
-                    <h5 class="fw-bold">MY ACCOUNT</h5>
+                    <h5 class="fw-bold">SUPPORT</h5>
                     <ul class="mt-4">
-                        <li><a href="my-account.html">Dashboard</a></li>
-                        <li><a href="my-account.html">My Orders</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="address-book.html">Addresses</a></li>
-                        <li><a href="profile-edit.html">Edit Profile</a></li>
+                        <li><a href="my-account.html">My Account</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="track-order.html">Order Tracking</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 mb-5">
                     <h5 class="fw-bold">CONTACT INFO</h5>
                     <ul class="mt-4">
-                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i>Level 10, Bashundhara City
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
                             Shopping Mall, Dhaka</li>
-                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i>+880 123 456 7890</li>
-                        <li><i class="fa fa-envelope text-primary-custom me-2"></i>help@richman-style.com</li>
-                        <li><i class="fa fa-clock text-primary-custom me-2"></i>Sat – Thu: 10:00 AM – 08:30 PM</li>
+                        <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@zenwares.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat - Thu: 10:00 AM - 08:30 PM</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom text-center">
-                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved. Designed with <i
-                        class="fa fa-heart text-danger"></i> for Fashion.</p>
+                <p class="m-0">&copy; 2026 ZenWares. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -339,6 +508,9 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 
     <script>
         /* AVATAR UPLOAD — preview image before upload */

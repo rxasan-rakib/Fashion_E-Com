@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richman Inspired | Modern E-Commerce Fashion Store</title>
+    <title>ZenWares | Modern E-Commerce Fashion Store</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for Icons -->
@@ -25,11 +25,18 @@
     <div class="top-bar d-none d-md-block">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <span><i class="fa fa-phone me-2"></i> +880 123 456 789</span>
-                    <span class="ms-4"><i class="fa fa-envelope me-2"></i> info@richman-style.com</span>
+                    <span class="ms-4"><i class="fa fa-envelope me-2"></i> info@zenwares.com</span>
                 </div>
-                <div class="col-md-6 text-end">
+                <div class="col-md-4">
+                    <div class="topbar-marquee overflow-hidden">
+                        <div class="topbar-marquee-content">
+                            Free Shipping on Orders Over ৳5000 • New Arrivals Every Week • 30 Days Easy Returns • 24/7 Customer Support • Free Shipping on Orders Over ৳5000 • New Arrivals Every Week • 30 Days Easy Returns • 24/7 Customer Support
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
                     <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
@@ -42,19 +49,68 @@
     <!-- 2. Main Navbar -->
     <nav class="navbar navbar-expand-lg main-navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span>MAN</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
+            <div class="d-flex align-items-center">
+                <!-- Toggler for Sidebar -->
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <span class="fw-bold fs-3"><span class="text-primary-custom">ZEN</span>WARES</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="d-none d-lg-flex collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Men</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Women</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Accessories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">New Arrivals</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Collections
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container-fluid">
+                                <div class="row g-4 p-3">
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Men's Wear</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Panjabi</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Kabli Set</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Jubba</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Polo Shirt</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">T-Shirt</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Kids' Wear</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Panjabi (Kids)</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Kabli Set (Kids)</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Jubba (Kids)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Campaigns</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="shop.html">Flash Sale</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Eid Collection</a></li>
+                                            <li><a class="dropdown-item" href="shop.html">Trending Now</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold text-uppercase text-primary-custom mb-3">Showrooms</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="contact.html">Dhaka Outlets</a></li>
+                                            <li><a class="dropdown-item" href="contact.html">Chittagong Outlets</a></li>
+                                            <li><a class="dropdown-item" href="contact.html">Store Locator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Campaign</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Outlets</a></li>
                 </ul>
                 <div class="navbar-icons border-start ps-lg-4 d-flex align-items-center position-relative">
                     <div class="search-container">
@@ -70,8 +126,82 @@
                     <a href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
                 </div>
             </div>
+
+            <!-- Mobile Icons -->
+            <div class="navbar-icons-mobile d-lg-none d-flex align-items-center">
+                <div class="search-container">
+                    <a href="#" class="search-trigger" id="searchTriggerMobile"><i class="fa fa-search"></i></a>
+                    <div class="search-popup" id="searchPopupMobile">
+                        <form action="shop.html" method="GET" class="d-flex">
+                            <input type="text" name="q" class="form-control" placeholder="Search products...">
+                            <button type="submit" class="btn btn-custom"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <a href="login.html"><i class="fa fa-user"></i></a>
+                <a class="me-2" href="cart.html"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" data-bs-scroll="true" data-bs-backdrop="true">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold fs-3"><span class="text-primary-custom">ZEN</span>WARES</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#collectionsMenu">
+                        Collections <i class="fa fa-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="collectionsMenu">
+                        <div class="card card-body border-0 ps-4 py-2">
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2 mt-2">Men's Wear</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Panjabi</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Kabli Set</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Jubba</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Polo Shirt</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">T-Shirt</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Kids' Wear</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Panjabi (Kids)</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Kabli Set (Kids)</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Jubba (Kids)</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Campaigns</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Flash Sale</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Eid Collection</a></li>
+                                <li class="mb-2"><a href="shop.html" class="text-muted text-decoration-none">Trending Now</a></li>
+                            </ul>
+                            <h6 class="fw-bold text-uppercase text-primary-custom mb-2">Showrooms</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Dhaka Outlets</a></li>
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Chittagong Outlets</a></li>
+                                <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Store Locator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="shop.html">Categories</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="shop.html">Campaign</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" href="shop.html">Outlets</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- 3. Hero Slider Section -->
     <section class="hero-slider">
@@ -215,7 +345,7 @@
     </section>
 
     <!-- 5. Product Section -->
-    <section class="py-5 bg-light">
+    <section class="bg-light">
         <div class="container py-4">
             <div class="d-flex justify-content-between align-items-center mb-5">
                 <h2 class="fw-bold m-0">NEW ARRIVALS</h2>
@@ -228,7 +358,7 @@
                             <span class="badge bg-success stock-badge">In Stock</span>
                             <span class="discount-badge">23% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-1.png"
                                     class="img-fluid w-100" alt="Product 1">
                             </a>
                             <div class="product-actions">
@@ -255,7 +385,7 @@
                             <span class="badge bg-success stock-badge">In Stock</span>
                             <span class="discount-badge">6% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-2.png"
                                     class="img-fluid w-100" alt="Product 2">
                             </a>
                             <div class="product-actions">
@@ -282,7 +412,7 @@
                             <span class="badge bg-danger stock-badge">Out of Stock</span>
                             <span class="discount-badge">15% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-3.png"
                                     class="img-fluid w-100" alt="Product 3">
                             </a>
                             <div class="product-actions">
@@ -309,7 +439,7 @@
                             <span class="badge bg-warning text-dark stock-badge">Low Stock</span>
                             <span class="discount-badge">16% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-4.png"
                                     class="img-fluid w-100" alt="Product 4">
                             </a>
                             <div class="product-actions">
@@ -336,7 +466,7 @@
                             <span class="badge bg-success stock-badge">In Stock</span>
                             <span class="discount-badge">23% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-5.png"
                                     class="img-fluid w-100" alt="Product 5">
                             </a>
                             <div class="product-actions">
@@ -349,10 +479,10 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="product-title">Slim Fit Oxford Shirt</h3>
+                            <h3 class="product-title">Printed Casual Shirt</h3>
                             <div class="product-price">
-                                <span class="old-price">৳ 3,200</span>
-                                <span class="discount-price">৳ 2,450</span>
+                                <span class="old-price">৳ 3,000</span>
+                                <span class="discount-price">৳ 2,300</span>
                             </div>
                         </div>
                     </div>
@@ -363,7 +493,7 @@
                             <span class="badge bg-success stock-badge">In Stock</span>
                             <span class="discount-badge">6% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-6.png"
                                     class="img-fluid w-100" alt="Product 6">
                             </a>
                             <div class="product-actions">
@@ -376,10 +506,10 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="product-title">Classic Navy Blazer</h3>
+                            <h3 class="product-title">Slim Fit Chinos</h3>
                             <div class="product-price">
-                                <span class="old-price">৳ 9,500</span>
-                                <span class="discount-price">৳ 8,900</span>
+                                <span class="old-price">৳ 4,000</span>
+                                <span class="discount-price">৳ 3,750</span>
                             </div>
                         </div>
                     </div>
@@ -390,7 +520,7 @@
                             <span class="badge bg-danger stock-badge">Out of Stock</span>
                             <span class="discount-badge">15% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-7.png"
                                     class="img-fluid w-100" alt="Product 7">
                             </a>
                             <div class="product-actions">
@@ -403,10 +533,10 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="product-title">Premium Denim Trousers</h3>
+                            <h3 class="product-title">Premium Linen Shirt</h3>
                             <div class="product-price">
-                                <span class="old-price">৳ 3,800</span>
-                                <span class="discount-price">৳ 3,200</span>
+                                <span class="old-price">৳ 3,500</span>
+                                <span class="discount-price">৳ 2,975</span>
                             </div>
                         </div>
                     </div>
@@ -417,7 +547,7 @@
                             <span class="badge bg-warning text-dark stock-badge">Low Stock</span>
                             <span class="discount-badge">16% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-8.png"
                                     class="img-fluid w-100" alt="Product 8">
                             </a>
                             <div class="product-actions">
@@ -430,10 +560,10 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="product-title">Luxury Polo Shirt</h3>
+                            <h3 class="product-title">Classic T-Shirt</h3>
                             <div class="product-price">
-                                <span class="old-price">৳ 2,200</span>
-                                <span class="discount-price">৳ 1,850</span>
+                                <span class="old-price">৳ 1,500</span>
+                                <span class="discount-price">৳ 1,260</span>
                             </div>
                         </div>
                     </div>
@@ -443,7 +573,7 @@
     </section>
 
     <!-- Best Selling Products Section -->
-    <section class="py-5 bg-light border-top">
+    <section class="pt-3 bg-light border-top">
         <div class="container py-4">
             <div class="d-flex justify-content-between align-items-center mb-5">
                 <h2 class="fw-bold m-0">BEST SELLING PRODUCTS</h2>
@@ -456,7 +586,7 @@
                             <span class="badge bg-danger stock-badge">Hot</span>
                             <span class="discount-badge">10% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-9.png"
                                     class="img-fluid w-100" alt="Best Seller 1">
                             </a>
                             <div class="product-actions">
@@ -469,7 +599,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="product-title">Premium Button-Down Pattern Shirt</h3>
+                            <h3 class="product-title">Premium Button-Down Shirt</h3>
                             <div class="product-price">
                                 <span class="old-price">৳ 2,800</span>
                                 <span class="discount-price">৳ 2,520</span>
@@ -483,7 +613,7 @@
                             <span class="badge bg-danger stock-badge">Hot</span>
                             <span class="discount-badge">20% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-10.png"
                                     class="img-fluid w-100" alt="Best Seller 2">
                             </a>
                             <div class="product-actions">
@@ -510,7 +640,7 @@
                             <span class="badge bg-danger stock-badge">Hot</span>
                             <span class="discount-badge">12% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-11.png"
                                     class="img-fluid w-100" alt="Best Seller 3">
                             </a>
                             <div class="product-actions">
@@ -537,7 +667,115 @@
                             <span class="badge bg-danger stock-badge">Hot</span>
                             <span class="discount-badge">15% OFF</span>
                             <a href="product-detail.html">
-                                <img src="https://images.unsplash.com/photo-1551854838-212c50b4c184?q=80&w=600&auto=format&fit=crop"
+                                <img src="assets/Product/product-12.png"
+                                    class="img-fluid w-100" alt="Best Seller 4">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                        class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Lightweight Summer Bomber Jacket</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 4,800</span>
+                                <span class="discount-price">৳ 4,080</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4 d-flex">
+                    <div class="product-card w-100">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-danger stock-badge">Hot</span>
+                            <span class="discount-badge">10% OFF</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-13.png"
+                                    class="img-fluid w-100" alt="Best Seller 1">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                        class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Premium Button-Down Pattern Shirt</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 2,800</span>
+                                <span class="discount-price">৳ 2,520</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4 d-flex">
+                    <div class="product-card w-100">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-danger stock-badge">Hot</span>
+                            <span class="discount-badge">20% OFF</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-14.png"
+                                    class="img-fluid w-100" alt="Best Seller 2">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                        class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Stretch Denim Slim Fit Pants</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 3,500</span>
+                                <span class="discount-price">৳ 2,800</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4 d-flex">
+                    <div class="product-card w-100">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-danger stock-badge">Hot</span>
+                            <span class="discount-badge">12% OFF</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-15.png"
+                                    class="img-fluid w-100" alt="Best Seller 3">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn" title="Add to Cart"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn" title="Quick View"><i
+                                        class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Tailored Smart Casual Suit</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 12,500</span>
+                                <span class="discount-price">৳ 11,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4 d-flex">
+                    <div class="product-card w-100">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-danger stock-badge">Hot</span>
+                            <span class="discount-badge">15% OFF</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-16.png"
                                     class="img-fluid w-100" alt="Best Seller 4">
                             </a>
                             <div class="product-actions">
@@ -563,41 +801,75 @@
     </section>
 
     <!-- Brand Lookbook Section -->
-    <section class="py-5 bg-white">
-        <div class="container py-4">
+    <section class="cat-section">
+        <div class="container">
             <div class="text-center mb-5">
                 <h6 class="text-primary-custom fw-bold letter-spacing-custom">SEASON LOOKBOOK</h6>
                 <h2 class="fw-bold">STYLING INSPIRATION</h2>
                 <div class="mx-auto" style="width:50px;height:3px;background:var(--primary-color);"></div>
             </div>
-            <div class="row g-3">
-                <div class="col-md-4 col-sm-6 col-12">
-                    <a href="shop.html" class="category-card w-100">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
-                            alt="Lookbook 1">
-                        <div class="category-overlay">
-                            <h5>THE CLASSIC GENTLEMAN</h5>
+            <div class="cat-slider-container">
+                <button class="cat-nav-btn prev" id="lookbook-prev"><i class="fa fa-chevron-left"></i></button>
+                <button class="cat-nav-btn next" id="lookbook-next"><i class="fa fa-chevron-right"></i></button>
+                <div class="cat-slider-wrap">
+                    <div class="cat-slider-track" id="lookbook-track">
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 1">
+                                <div class="category-overlay">
+                                    <h5>THE CLASSIC GENTLEMAN</h5>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <a href="shop.html" class="category-card w-100">
-                        <img src="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop"
-                            alt="Lookbook 2">
-                        <div class="category-overlay">
-                            <h5>URBAN SOPHISTICATION</h5>
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 2">
+                                <div class="category-overlay">
+                                    <h5>URBAN SOPHISTICATION</h5>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-12 col-12">
-                    <a href="shop.html" class="category-card w-100">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop"
-                            alt="Lookbook 3">
-                        <div class="category-overlay">
-                            <h5>MODERN EXECUTIVE</h5>
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 3">
+                                <div class="category-overlay">
+                                    <h5>MODERN EXECUTIVE</h5>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 4">
+                                <div class="category-overlay">
+                                    <h5>CASUAL ELEGANCE</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 5">
+                                <div class="category-overlay">
+                                    <h5>STREET STYLE</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cat-slide">
+                            <a href="shop.html" class="category-card">
+                                <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lookbook 6">
+                                <div class="category-overlay">
+                                    <h5>SMART CASUAL</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <div class="cat-dots" id="lookbook-dots"></div>
             </div>
         </div>
     </section>
@@ -629,7 +901,7 @@
     </section>
 
     <!-- 7. Customer Reviews -->
-    <section class="py-5 bg-white">
+    <section class="pt-3 bg-white">
         <div class="container py-4">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">WHAT OUR CUSTOMERS SAY</h2>
@@ -726,7 +998,7 @@
     </section>
 
     <!-- Brand Value Features -->
-    <section class="py-5 bg-white border-top border-bottom">
+    <section class="bg-white border-top border-bottom">
         <div class="container py-3">
             <div class="row g-4 justify-content-center text-center">
                 <div class="col-lg-3 col-sm-6">
@@ -770,7 +1042,7 @@
     </section>
 
     <!-- 8. Newsletter -->
-    <section class="py-5 bg-light">
+    <section class="py-3 bg-light">
         <div class="container py-4 text-center">
             <h2 class="fw-bold mb-3">JOIN OUR NEWSLETTER</h2>
             <p class="text-muted mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
@@ -793,11 +1065,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 pb-5">
                     <a class="navbar-brand" href="index.html">
-                        <span class="fw-bold fs-3"><span class="text-primary-custom">RICH</span><span
-                                class="text-white">MAN</span></span>
+                        <span class="fw-bold fs-3"><span class="text-primary-custom">ZEN</span><span
+                                class="text-white">WARES</span></span>
                     </a>
                     <h5 class="fw-bold pt-3">ABOUT US</h5>
-                    <p class="mt-4">Richman stands for premium quality and sophisticated style. We aim to revolutionize
+                    <p class="mt-4">ZenWares stands for premium quality and sophisticated style. We aim to revolutionize
                         the fashion industry in Bangladesh with our curated collections.</p>
                     <div class="mt-4">
                         <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
@@ -830,13 +1102,13 @@
                         <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City
                             Shopping Mall, Dhaka</li>
                         <li><i class="fa fa-phone-alt text-primary-custom me-2"></i> +880 123 456 7890</li>
-                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@richman-style.com</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> help@zenwares.com</li>
                         <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat - Thu: 10:00 AM - 08:30 PM</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom text-center">
-                <p class="m-0">&copy; 2026 Richman Style. All Rights Reserved.</p>
+                <p class="m-0">&copy; 2026 ZenWares. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
