@@ -4,57 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop All Products | ZenWares</title>
+    <title>Blog | ZenWares</title>
     <link rel="icon" href="assets/logo/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .shop-hero {
-            background: var(--light-bg);
-            padding: 60px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .filter-section h6 {
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--primary-color);
-            display: inline-block;
-        }
-
-        .filter-list li {
-            margin-bottom: 10px;
-        }
-
-        .filter-list a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .size-box {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #ddd;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .size-box:hover,
-        .size-box.active {
-            background: var(--secondary-color);
-            color: var(--white);
-            border-color: var(--secondary-color);
-        }
-    </style>
 </head>
-
 <body>
 
     <!-- Loading Spinner -->
@@ -158,9 +113,9 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link active" href="shop.html">NEW ARRIVALS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">NEW ARRIVALS</a></li>
                     <li class="nav-item"><a class="nav-link" href="track-order.html">Track Order</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar-icons border-start ps-lg-4 d-flex align-items-center position-relative">
@@ -251,13 +206,13 @@
                     </div>
                 </li>
                 <li class="nav-item mb-3">
-                    <a class="nav-link active" href="shop.html">NEW ARRIVALS</a>
+                    <a class="nav-link" href="shop.html">NEW ARRIVALS</a>
                 </li>
                 <li class="nav-item mb-3">
                     <a class="nav-link" href="track-order.html">Track Order</a>
                 </li>
                 <li class="nav-item mb-3">
-                    <a class="nav-link" href="blog.html">blog</a>
+                    <a class="nav-link active" href="blog.html">blog</a>
                 </li>
                 <li class="nav-item mb-3">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -266,236 +221,131 @@
         </div>
     </div>
 
-    <!-- Shop Hero / Breadcrumbs -->
-    <section class="shop-hero">
+    <!-- Blog Hero / Breadcrumbs -->
+    <section class="blog-hero">
         <div class="container text-center">
-            <h1 class="fw-bold">MENS COLLECTION</h1>
+            <h1 class="fw-bold">OUR BLOG</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center m-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
                 </ol>
             </nav>
         </div>
     </section>
 
-    <!-- Main Shop Section -->
+    <!-- Main Blog Section -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <!-- Sidebar Filters -->
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="filter-section mb-5">
-                        <h6>Categories</h6>
-                        <ul class="filter-list mt-3">
-                            <li><a href="shop.html">Formal Shirts (12)</a></li>
-                            <li><a href="shop.html">Casual Shirts (24)</a></li>
-                            <li><a href="shop.html">Denim Pants (32)</a></li>
-                            <li><a href="shop.html">Suits & Blazers (8)</a></li>
-                            <li><a href="shop.html">Accessories (15)</a></li>
-                        </ul>
-                    </div>
-                    <div class="filter-section mb-5">
-                        <h6>Filter By Price</h6>
-                        <div class="mt-3">
-                            <input type="range" class="form-range" min="500" max="10000" step="100">
-                            <div class="d-flex justify-content-between mt-2">
-                                <span>৳ 500</span>
-                                <span>৳ 10,000</span>
-                            </div>
-                            <button class="btn btn-custom w-100 mt-3 py-2 btn-sm">Filter</button>
-                        </div>
-                    </div>
-                    <div class="filter-section mb-5">
-                        <h6>Select Size</h6>
-                        <div class="mt-3">
-                            <span class="size-box">S</span>
-                            <span class="size-box active">M</span>
-                            <span class="size-box">L</span>
-                            <span class="size-box">XL</span>
-                            <span class="size-box">XXL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Grid -->
-                <div class="col-lg-9">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <p class="m-0 text-muted">Showing 1–12 of 64 results</p>
-                        <select class="form-select w-auto rounded-0">
-                            <option>Default Sorting</option>
-                            <option>Sort by Price: Low to High</option>
-                            <option>Sort by Price: High to Low</option>
-                            <option>Sort by Newness</option>
-                        </select>
-                    </div>
-
+                <!-- Blog Grid -->
+                <div class="col-lg-8">
                     <div class="row">
-                        <!-- Product Item 1 -->
+                        <!-- Blog Card 1 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-success stock-badge">In Stock</span>
-                                    <span class="discount-badge">23% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-1.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Fashion</span>
+                                    <img src="assets/Product/product-1.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Slim Fit Oxford Shirt</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 3,200</span>
-                                        <span class="discount-price">৳ 2,450</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> June 15, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(0); return false;">Summer Fashion Trends 2026</a></h3>
+                                    <p class="blog-excerpt">Discover the latest summer fashion trends that will keep you stylish and comfortable all season long...</p>
+                                    <a href="#" onclick="openBlogModal(0); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 2 -->
+                        <!-- Blog Card 2 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-success stock-badge">In Stock</span>
-                                    <span class="discount-badge">6% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-2.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Style</span>
+                                    <img src="assets/Product/product-2.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Classic Navy Blazer</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 9,500</span>
-                                        <span class="discount-price">৳ 8,900</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> June 10, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(1); return false;">How to Style Panjabi for Any Occasion</a></h3>
+                                    <p class="blog-excerpt">Learn how to style a panjabi for weddings, parties, and casual outings with these simple tips...</p>
+                                    <a href="#" onclick="openBlogModal(1); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 3 -->
+                        <!-- Blog Card 3 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-danger stock-badge">Out of Stock</span>
-                                    <span class="discount-badge">15% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-3.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Tips</span>
+                                    <img src="assets/Product/product-3.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Premium Denim Trousers</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 3,800</span>
-                                        <span class="discount-price">৳ 3,200</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> June 5, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(2); return false;">Fabric Care Guide for Long-Lasting Clothes</a></h3>
+                                    <p class="blog-excerpt">Proper fabric care can make your clothes last longer. Follow our guide to keep them looking new...</p>
+                                    <a href="#" onclick="openBlogModal(2); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 4 -->
+                        <!-- Blog Card 4 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-warning text-dark stock-badge">Low Stock</span>
-                                    <span class="discount-badge">16% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-4.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Fashion</span>
+                                    <img src="assets/Product/product-4.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Luxury Polo Shirt</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 2,200</span>
-                                        <span class="discount-price">৳ 1,850</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> May 30, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(3); return false;">Eid Collection Preview 2026</a></h3>
+                                    <p class="blog-excerpt">Get a sneak peek at our exclusive Eid collection featuring traditional and modern designs...</p>
+                                    <a href="#" onclick="openBlogModal(3); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 5 -->
+                        <!-- Blog Card 5 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-success stock-badge">In Stock</span>
-                                    <span class="discount-badge">23% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-5.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Style</span>
+                                    <img src="assets/Product/product-5.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Printed Casual Shirt</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 3,000</span>
-                                        <span class="discount-price">৳ 2,300</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> May 25, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(4); return false;">Couple Matching Outfits Ideas</a></h3>
+                                    <p class="blog-excerpt">Looking for perfect couple outfits? Check out our matching collection for every occasion...</p>
+                                    <a href="#" onclick="openBlogModal(4); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Product 6 -->
+                        <!-- Blog Card 6 -->
                         <div class="col-lg-4 col-md-6 col-6 mb-4 d-flex">
-                            <div class="product-card w-100">
-                                <div class="product-img-wrapper">
-                                    <span class="badge bg-success stock-badge">In Stock</span>
-                                    <span class="discount-badge">6% OFF</span>
-                                    <a href="product-detail.html">
-                                        <img src="assets/Product/product-6.png"
-                                            class="img-fluid w-100" alt="Product">
-                                    </a>
-                                    <div class="product-actions">
-                                        <a href="wishlist.html" class="action-btn" title="Add to Wishlist"><i
-                                                class="far fa-heart"></i></a>
-                                        <a href="cart.html" class="action-btn" title="Add to Cart"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a href="product-detail.html" class="action-btn" title="Quick View"><i
-                                                class="fa fa-eye"></i></a>
-                                    </div>
+                            <div class="blog-card w-100">
+                                <div class="blog-img-wrapper">
+                                    <span class="blog-category">Tips</span>
+                                    <img src="assets/Product/product-6.png" class="img-fluid w-100" alt="Blog">
                                 </div>
-                                <div class="text-center">
-                                    <h3 class="product-title">Slim Fit Chinos</h3>
-                                    <div class="product-price">
-                                        <span class="old-price">৳ 4,000</span>
-                                        <span class="discount-price">৳ 3,750</span>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> May 20, 2026</span>
+                                        <span class="ms-3"><i class="far fa-user"></i> Admin</span>
                                     </div>
+                                    <h3 class="blog-title"><a href="#" onclick="openBlogModal(5); return false;">Choosing the Right Size: A Complete Guide</a></h3>
+                                    <p class="blog-excerpt">Never worry about wrong sizes again! Our size guide will help you find the perfect fit...</p>
+                                    <a href="#" onclick="openBlogModal(5); return false;" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -511,6 +361,73 @@
                             <li class="page-item"><a class="page-link rounded-0" href="#">Next</a></li>
                         </ul>
                     </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search -->
+                    <div class="sidebar-section">
+                        <h6>Search</h6>
+                        <div class="search-box d-flex">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <button class="btn btn-custom"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-section">
+                        <h6>Categories</h6>
+                        <ul class="list-unstyled category-list mt-3">
+                            <li><a href="#">Fashion <span>(12)</span></a></li>
+                            <li><a href="#">Style <span>(8)</span></a></li>
+                            <li><a href="#">Tips <span>(15)</span></a></li>
+                            <li><a href="#">Collection <span>(6)</span></a></li>
+                            <li><a href="#">Trends <span>(10)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Posts -->
+                    <div class="sidebar-section">
+                        <h6>Recent Posts</h6>
+                        <div class="mt-3">
+                            <div class="recent-post">
+                                <img src="assets/Product/product-1.png" alt="Recent Post">
+                                <div>
+                                    <h4 class="recent-post-title"><a href="#">Summer Fashion Trends 2026</a></h4>
+                                    <span class="recent-post-date">June 15, 2026</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <img src="assets/Product/product-2.png" alt="Recent Post">
+                                <div>
+                                    <h4 class="recent-post-title"><a href="#">How to Style Panjabi for Any Occasion</a></h4>
+                                    <span class="recent-post-date">June 10, 2026</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <img src="assets/Product/product-3.png" alt="Recent Post">
+                                <div>
+                                    <h4 class="recent-post-title"><a href="#">Fabric Care Guide for Long-Lasting Clothes</a></h4>
+                                    <span class="recent-post-date">June 5, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar-section">
+                        <h6>Tags</h6>
+                        <div class="tag-cloud mt-3">
+                            <a href="#">Fashion</a>
+                            <a href="#">Style</a>
+                            <a href="#">Summer</a>
+                            <a href="#">Winter</a>
+                            <a href="#">Eid</a>
+                            <a href="#">Panjabi</a>
+                            <a href="#">Couple</a>
+                            <a href="#">Premium</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -575,6 +492,133 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Blog Modal -->
+    <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blogModalLabel">Blog Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <img id="blogModalImage" src="" class="img-fluid w-100 rounded" alt="Blog">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="blog-meta mb-3">
+                                <span><i class="far fa-calendar"></i> <span id="blogModalDate">June 15, 2026</span></span>
+                                <span class="ms-3"><i class="far fa-user"></i> Admin</span>
+                            </div>
+                            <div id="blogModalContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Blog data
+        const blogData = {
+            0: {
+                title: "Summer Fashion Trends 2026",
+                date: "June 15, 2026",
+                image: "assets/Product/product-1.png",
+                content: `<p>Discover the latest summer fashion trends that will keep you stylish and comfortable all season long. This year, we're seeing a resurgence of vibrant colors, lightweight fabrics, and effortless silhouettes that are perfect for the warm weather.</p>
+                <h4>Key Trends This Season</h4>
+                <ul>
+                    <li><strong>Vibrant Colors:</strong> Bold oranges, electric blues, and sunny yellows are taking center stage this summer.</li>
+                    <li><strong>Lightweight Fabrics:</strong> Linen, cotton, and breathable synthetics are perfect for staying cool.</li>
+                    <li><strong>Oversized Silhouettes:</strong> Comfort meets style with relaxed fits and flowy designs.</li>
+                    <li><strong>Natural Textures:</strong> Embrace the organic look with woven materials and earthy tones.</li>
+                </ul>
+                <p>Whether you're heading to the beach, a casual brunch, or a summer soirée, these trends will have you looking your best. Don't be afraid to mix and match patterns or experiment with bold accessories to make your look truly unique.</p>
+                <h4>Styling Tips</h4>
+                <p>When styling these pieces, remember to keep it simple. Let one statement piece be the focal point of your outfit, and keep the rest neutral. Comfort should always be a priority - if you feel good, you'll look good!</p>`
+            },
+            1: {
+                title: "How to Style Panjabi for Any Occasion",
+                date: "June 10, 2026",
+                image: "assets/Product/product-2.png",
+                content: `<p>Learn how to style a panjabi for weddings, parties, and casual outings with these simple tips. The panjabi is a versatile garment that can be dressed up or down depending on the occasion.</p>
+                <h4>For Weddings & Formal Events</h4>
+                <p>Opt for rich fabrics like silk or jamdani in deep, luxurious colors. Pair with elegant accessories and traditional footwear to complete the look.</p>
+                <h4>For Casual Outings</h4>
+                <p>Choose lightweight cotton panjabis in lighter colors. Roll up the sleeves and pair with comfortable shoes for a relaxed, effortless look.</p>
+                <h4>For Office Wear</h4>
+                <p>Stick to neutral colors and clean cuts. Pair with tailored trousers for a professional yet comfortable look.</p>`
+            },
+            2: {
+                title: "Fabric Care Guide for Long-Lasting Clothes",
+                date: "June 5, 2026",
+                image: "assets/Product/product-3.png",
+                content: `<p>Proper fabric care can make your clothes last longer. Follow our guide to keep them looking new for years to come. Different fabrics require different care techniques.</p>
+                <h4>Cotton Care</h4>
+                <p>Wash in cold water and tumble dry on low. Remove promptly to prevent wrinkles.</p>
+                <h4>Silk Care</h4>
+                <p>Dry clean only or hand wash gently in cold water. Never wring silk garments.</p>
+                <h4>Linen Care</h4>
+                <p>Linen gets softer with each wash. Embrace the natural wrinkles that give linen its characteristic look.</p>
+                <h4>General Tips</h4>
+                <ul>
+                    <li>Always read the care label</li>
+                    <li>Wash similar colors together</li>
+                    <li>Store properly to maintain shape</li>
+                    <li>Mend small repairs promptly</li>
+                </ul>`
+            },
+            3: {
+                title: "Eid Collection Preview 2026",
+                date: "May 30, 2026",
+                image: "assets/Product/product-4.png",
+                content: `<p>Get a sneak peek at our exclusive Eid collection featuring traditional and modern designs. This year's collection combines timeless elegance with contemporary style.</p>
+                <h4>What to Expect</h4>
+                <p>Our Eid collection features intricate embroidery, luxurious fabrics, and designs that celebrate tradition while embracing modern fashion trends.</p>
+                <h4>Shopping Tips</h4>
+                <p>Shop early to get the best selection. Consider matching outfits for the whole family to make this Eid even more special.</p>`
+            },
+            4: {
+                title: "Couple Matching Outfits Ideas",
+                date: "May 25, 2026",
+                image: "assets/Product/product-5.png",
+                content: `<p>Looking for perfect couple outfits? Check out our matching collection for every occasion. Coordinating outfits are a fun way to show your connection.</p>
+                <h4>Matching Styles</h4>
+                <p>From subtle coordination to identical outfits, there are many ways to match your partner's style without being too identical.</p>
+                <h4>Occasions to Match</h4>
+                <ul>
+                    <li>Weddings and Eid celebrations</li>
+                    <li>Family gatherings</li>
+                    <li>Special date nights</li>
+                    <li>Vacation photos</li>
+                </ul>`
+            },
+            5: {
+                title: "Choosing the Right Size: A Complete Guide",
+                date: "May 20, 2026",
+                image: "assets/Product/product-6.png",
+                content: `<p>Never worry about wrong sizes again! Our size guide will help you find the perfect fit. Getting the right size is essential for both comfort and style.</p>
+                <h4>How to Measure</h4>
+                <p>Follow our step-by-step guide to take accurate measurements of your chest, shoulders, waist, and length.</p>
+                <h4>Our Size Chart</h4>
+                <p>Refer to our detailed size chart to find your perfect fit. Remember that sizes can vary slightly between styles.</p>
+                <h4>Fit Tips</h4>
+                <p>Consider how you like your clothes to fit - some prefer a relaxed fit while others prefer a more tailored look.</p>`
+            }
+        };
+
+        // Function to open blog modal
+        function openBlogModal(index) {
+            const blog = blogData[index];
+            document.getElementById('blogModalLabel').textContent = blog.title;
+            document.getElementById('blogModalDate').textContent = blog.date;
+            document.getElementById('blogModalImage').src = blog.image;
+            document.getElementById('blogModalContent').innerHTML = blog.content;
+            const modal = new bootstrap.Modal(document.getElementById('blogModal'));
+            modal.show();
+        }
+    </script>
 </body>
 
 </html>
