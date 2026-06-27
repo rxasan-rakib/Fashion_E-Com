@@ -10,48 +10,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        .product-gallery {
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
         .product-gallery img {
-            border: 1px solid #eee;
+            border: 1px solid #f5f5f5;
             cursor: pointer;
             transition: var(--transition);
+            border-radius: 6px;
         }
 
         .product-gallery .thumb-img {
             aspect-ratio: 3/4;
             height: auto;
             object-fit: cover;
+            border-radius: 6px;
         }
 
         .product-gallery .thumb-img.active {
             border-color: var(--primary-color);
+            border-width: 2px;
         }
 
         .main-img-container {
-            height: 600px;
+            height: 450px;
+            width: 100%;
+            margin: 0 auto 20px;
             overflow: hidden;
+            border-radius: 8px;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .main-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: top center;
+        }
+
+        .product-info {
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            height: 100%;
+        }
+
+        .product-info h2 {
+            font-size: 26px;
+            color: #333;
+        }
+
+        .product-info-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .product-info-tags span {
             font-size: 13px;
-            margin-right: 15px;
-            color: #777;
+            color: #666;
+        }
+
+        .product-price {
+            padding: 18px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .selector-item {
             display: inline-block;
-            padding: 8px 15px;
+            padding: 10px 22px;
             border: 1px solid #ddd;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            margin-right: 8px;
+            margin-bottom: 8px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 500;
             transition: var(--transition);
+            border-radius: 4px;
         }
 
         .selector-item:hover,
@@ -62,13 +107,14 @@
         }
 
         .color-dot {
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 12px;
             border: 2px solid transparent;
             cursor: pointer;
+            transition: var(--transition);
         }
 
         .color-dot.active {
@@ -76,10 +122,37 @@
         }
 
         .qty-input {
-            width: 80px;
+            width: 95px;
             text-align: center;
-            border-radius: 0;
+            border-radius: 4px;
             border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .shop-hero {
+            background: var(--light-bg);
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: #666;
+            font-weight: 500;
+            padding: 14px 28px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--white);
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .tab-content {
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
     </style>
 </head>
@@ -295,4 +368,393 @@
         </div>
     </div>
 
-    
+    <!-- Product Detail Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Product Gallery -->
+                <div class="col-lg-5">
+                    <div class="product-gallery">
+                        <div class="main-img-container">
+                            <img src="assets/Product/product-1.png" id="mainImage" alt="Product Image">
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <img src="assets/Product/product-1.png" class="thumb-img active img-fluid" style="width: 70px; cursor: pointer;" alt="Thumbnail 1">
+                            <img src="assets/Product/product-2.png" class="thumb-img img-fluid" style="width: 70px; cursor: pointer;" alt="Thumbnail 2">
+                            <img src="assets/Product/product-3.png" class="thumb-img img-fluid" style="width: 70px; cursor: pointer;" alt="Thumbnail 3">
+                            <img src="assets/Product/product-4.png" class="thumb-img img-fluid" style="width: 70px; cursor: pointer;" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-7">
+                    <div class="product-info">
+                        <h2 class="fw-bold mb-3" id="productName">Premium White Oxford Shirt</h2>
+                        <div class="product-info-tags">
+                            <span><i class="fa fa-star text-warning"></i> 4.8 (120 Reviews)</span>
+                            <span><i class="fa fa-check-circle text-success"></i> In Stock</span>
+                            <span><i class="fa fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="fs-3 fw-bold text-primary-custom" id="productPrice">৳ 2,450</span>
+                            <span class="text-decoration-line-through text-muted fs-5 ms-2" id="oldPrice">৳ 3,200</span>
+                            <span class="badge bg-danger ms-2">23% OFF</span>
+                        </div>
+                        <p class="text-muted mb-4">Elevate your wardrobe with our premium white Oxford shirt. Crafted from 100% cotton, this slim-fit shirt offers exceptional comfort and style. Perfect for both formal occasions and casual outings.</p>
+                        
+                        <!-- Size Selection -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-3">Size:</h6>
+                            <div class="selector-group">
+                                <span class="selector-item">S</span>
+                                <span class="selector-item active">M</span>
+                                <span class="selector-item">L</span>
+                                <span class="selector-item">XL</span>
+                                <span class="selector-item">XXL</span>
+                            </div>
+                        </div>
+
+                        <!-- Color Selection -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-3">Color:</h6>
+                            <div class="color-group">
+                                <span class="color-dot active" style="background-color: #ffffff; border: 1px solid #ddd;"></span>
+                                <span class="color-dot" style="background-color: #1a1a1a;"></span>
+                                <span class="color-dot" style="background-color: #3498db;"></span>
+                                <span class="color-dot" style="background-color: #e74c3c;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-3">Quantity:</h6>
+                            <div class="d-flex align-items-center flex-wrap gap-2">
+                                <input type="number" class="form-control qty-input" value="1" min="1" max="10">
+                                <button class="btn btn-custom px-4" onclick="addToCart()">
+                                    <i class="fa fa-shopping-cart me-2"></i> Add to Cart
+                                </button>
+                                <a href="wishlist.html" class="btn btn-outline-secondary px-3">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Product Meta -->
+                        <div class="border-top pt-4 mt-4">
+                            <div class="row g-2">
+                            
+                                <div class="col-6">
+                                    <span class="text-muted small">SKU:</span>
+                                    <span class="fw-bold ms-1">ZWS-001</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="text-muted small">Category:</span>
+                                    <span class="fw-bold ms-1">Formal Shirts</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="text-muted small">Brand:</span>
+                                    <span class="fw-bold ms-1">ZenWares</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="text-muted small">Material:</span>
+                                    <span class="fw-bold ms-1">100% Cotton</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Tabs -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <ul class="nav nav-tabs mb-4" id="productTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button">Description</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button">Specifications</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews (120)</button>
+                </li>
+            </ul>
+            <div class="tab-content bg-white p-4" id="productTabContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel">
+                    <h4 class="fw-bold mb-3">Product Description</h4>
+                    <p>Introducing our Premium White Oxford Shirt - the perfect addition to your wardrobe. This shirt is crafted from high-quality 100% cotton Oxford fabric, ensuring breathability and comfort throughout the day.</p>
+                    <p>Key features include:</p>
+                    <ul>
+                        <li>Slim fit design for a modern look</li>
+                        <li>Button-down collar for classic style</li>
+                        <li>Long sleeves with adjustable cuffs</li>
+                        <li>Machine washable for easy care</li>
+                        <li>Available in multiple sizes (S-XXL)</li>
+                    </ul>
+                    <p>Whether you're dressing for a formal meeting or a casual outing, this versatile shirt will keep you looking sharp and feeling comfortable.</p>
+                </div>
+                <div class="tab-pane fade" id="specifications" role="tabpanel">
+                    <h4 class="fw-bold mb-3">Product Specifications</h4>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><strong>Material:</strong></td>
+                                <td>100% Cotton Oxford Fabric</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fit:</strong></td>
+                                <td>Slim Fit</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Collar:</strong></td>
+                                <td>Button-down Collar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sleeves:</strong></td>
+                                <td>Long Sleeves</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Care Instructions:</strong></td>
+                                <td>Machine Wash Cold, Tumble Dry Low</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Origin:</strong></td>
+                                <td>Made in Bangladesh</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Available Sizes:</strong></td>
+                                <td>S, M, L, XL, XXL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="reviews" role="tabpanel">
+                    <h4 class="fw-bold mb-3">Customer Reviews</h4>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fw-bold mb-0">Excellent Quality!</h6>
+                            <span class="text-muted">2 days ago</span>
+                        </div>
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">Great shirt! The fabric quality is amazing and the fit is perfect. Highly recommended!</p>
+                        <p class="text-muted mb-0">- Rahim Ahmed</p>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fw-bold mb-0">Good Value for Money</h6>
+                            <span class="text-muted">1 week ago</span>
+                        </div>
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">Nice shirt overall. The color is slightly different from the picture but still looks good.</p>
+                        <p class="text-muted mb-0">- Karim Uddin</p>
+                    </div>
+                    <button class="btn btn-custom">Write a Review</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="fw-bold mb-4 text-center">Related Products</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-success stock-badge">In Stock</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-2.png" class="img-fluid w-100" alt="Product">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn"><i class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn"><i class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Classic Navy Blazer</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 9,500</span>
+                                <span class="discount-price">৳ 8,900</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-success stock-badge">In Stock</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-5.png" class="img-fluid w-100" alt="Product">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn"><i class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn"><i class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Printed Casual Shirt</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 3,000</span>
+                                <span class="discount-price">৳ 2,300</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-success stock-badge">In Stock</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-6.png" class="img-fluid w-100" alt="Product">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn"><i class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn"><i class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Slim Fit Chinos</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 4,000</span>
+                                <span class="discount-price">৳ 3,750</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-warning text-dark stock-badge">Low Stock</span>
+                            <a href="product-detail.html">
+                                <img src="assets/Product/product-4.png" class="img-fluid w-100" alt="Product">
+                            </a>
+                            <div class="product-actions">
+                                <a href="wishlist.html" class="action-btn"><i class="far fa-heart"></i></a>
+                                <a href="cart.html" class="action-btn"><i class="fa fa-shopping-cart"></i></a>
+                                <a href="product-detail.html" class="action-btn"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="product-title">Luxury Polo Shirt</h3>
+                            <div class="product-price">
+                                <span class="old-price">৳ 2,200</span>
+                                <span class="discount-price">৳ 1,850</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 pb-5">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="fw-bold fs-3"><span class="text-primary-custom">ZEN</span><span class="text-white">WARES</span></span>
+                    </a>
+                    <h5 class="fw-bold pt-3">ABOUT US</h5>
+                    <p class="mt-4">ZenWares stands for premium quality and sophisticated style. We aim to revolutionize the fashion industry in Bangladesh with our curated collections.</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">QUICK LINKS</h5>
+                    <ul class="mt-4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-5">
+                    <h5 class="fw-bold">SUPPORT</h5>
+                    <ul class="mt-4">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="track-order.html">Order Tracking</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-5">
+                    <h5 class="fw-bold">CONTACT INFO</h5>
+                    <ul class="mt-4">
+                        <li><i class="fa fa-map-marker-alt text-primary-custom me-2"></i> Level 10, Bashundhara City Shopping Mall, Dhaka</li>
+                        <li><i class="fa fa-phone text-primary-custom me-2"></i> +880 123 456 789</li>
+                        <li><i class="fa fa-envelope text-primary-custom me-2"></i> info@zenwares.com</li>
+                        <li><i class="fa fa-clock text-primary-custom me-2"></i> Sat-Thu: 10AM - 9PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-4 border-top">
+                    <p class="mb-0">&copy; 2024 ZenWares. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <script>
+        // Product Gallery Thumbnail Click
+        document.querySelectorAll('.thumb-img').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('mainImage').src = this.src;
+            });
+        });
+
+        // Size Selector
+        document.querySelectorAll('.selector-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.selector-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Color Selector
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add to Cart Function
+        function addToCart() {
+            const quantity = document.querySelector('.qty-input').value;
+            const cartCount = document.querySelector('.cart-count');
+            let currentCount = parseInt(cartCount.textContent);
+            cartCount.textContent = currentCount + parseInt(quantity);
+            alert('Product added to cart successfully!');
+        }
+    </script>

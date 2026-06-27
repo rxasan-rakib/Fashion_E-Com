@@ -5,7 +5,7 @@
     Background: #FFFFFF (White) / #F8F9FA (Light Gray)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap&display=swap');
 
 :root {
     --primary-color: #E52E2A;
@@ -67,7 +67,7 @@ ul {
     color: var(--white);
 }
 
-/* Swiper Testimonial Customization */
+/* Swiper Testimonial Customization - Only used on index.html */
 .testimonialSwiper .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
