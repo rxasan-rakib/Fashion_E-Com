@@ -9,78 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .cart-table th {
-            background-color: var(--light-bg);
-            text-transform: uppercase;
-            font-size: 14px;
-            padding: 20px;
-            border: none;
-        }
 
-        .cart-table td {
-            vertical-align: middle;
-            padding: 25px 20px;
-        }
-
-        .cart-product-img {
-            width: 80px;
-            height: 100px;
-            object-fit: cover;
-        }
-
-        .cart-summary {
-            background-color: var(--light-bg);
-            padding: 30px;
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .summary-total {
-            font-size: 20px;
-            font-weight: 700;
-            border-bottom: none;
-        }
-
-        @media (max-width: 768px) {
-            .cart-table thead {
-                display: none;
-            }
-
-            .cart-table tr {
-                display: block;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .cart-table td {
-                display: block;
-                text-align: right;
-                padding: 10px 0;
-            }
-
-            .cart-table td::before {
-                content: attr(data-label);
-                float: left;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-
-            .cart-table td.product-cell {
-                text-align: center;
-            }
-
-            .cart-table td.product-cell::before {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -304,13 +233,13 @@
     <!-- Cart Content -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-8">
-                    <div class="table-responsive">
+                    <div class="table-responsive border-0">
                         <table class="table cart-table align-middle">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
+                                    <th>Product Details</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Subtotal</th>
@@ -322,58 +251,116 @@
                                 <tr>
                                     <td class="product-cell" data-label="Product">
                                         <div class="d-flex align-items-center">
-                                            <img src="assets/Product/product-1.png"
-                                                class="cart-product-img me-3" alt="Product" loading="lazy">
+                                            <img src="assets/Product/product-1.png" class="cart-product-img me-3" alt="Premium White Oxford" loading="lazy">
                                             <div class="text-start">
-                                                <h6 class="fw-bold mb-0">Premium White Oxford</h6>
-                                                <small class="text-muted">Size: M | Color: White</small>
+                                                <h6 class="fw-bold mb-1">Premium White Oxford Shirt</h6>
+                                                <small class="text-muted d-block">Size: M | Color: White</small>
+                                                <small class="text-success fw-500"><i class="fa fa-check-circle me-1"></i> In Stock</small>
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-label="Price">৳ 2,450</td>
+                                    <td data-label="Price" class="fw-medium">৳ 2,450</td>
                                     <td data-label="Quantity">
-                                        <div class="d-flex align-items-center border w-fit" style="max-width: 120px;">
-                                            <button class="btn btn-sm">-</button>
-                                            <input type="text" class="form-control border-0 text-center bg-transparent"
-                                                value="1" readonly>
-                                            <button class="btn btn-sm">+</button>
+                                        <div class="cart-qty-select">
+                                            <button class="qty-btn" type="button" aria-label="Decrease quantity"><i class="fa fa-minus"></i></button>
+                                            <input type="text" value="1" readonly aria-label="Quantity">
+                                            <button class="qty-btn" type="button" aria-label="Increase quantity"><i class="fa fa-plus"></i></button>
                                         </div>
                                     </td>
                                     <td class="fw-bold text-primary-custom" data-label="Subtotal">৳ 2,450</td>
-                                    <td><a href="#" class="text-muted"><i class="fa fa-times"></i></a></td>
+                                    <td class="text-end" data-label="Remove"><a href="#" class="cart-remove-btn" title="Remove Item"><i class="fa fa-trash-alt"></i></a></td>
+                                </tr>
+                                <!-- Item 2 -->
+                                <tr>
+                                    <td class="product-cell" data-label="Product">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/Product/product-2.png" class="cart-product-img me-3" alt="Slim Fit Cotton Polo" loading="lazy">
+                                            <div class="text-start">
+                                                <h6 class="fw-bold mb-1">Slim Fit Cotton Polo Shirt</h6>
+                                                <small class="text-muted d-block">Size: L | Color: Black</small>
+                                                <small class="text-success fw-500"><i class="fa fa-check-circle me-1"></i> In Stock</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Price" class="fw-medium">৳ 1,850</td>
+                                    <td data-label="Quantity">
+                                        <div class="cart-qty-select">
+                                            <button class="qty-btn" type="button" aria-label="Decrease quantity"><i class="fa fa-minus"></i></button>
+                                            <input type="text" value="2" readonly aria-label="Quantity">
+                                            <button class="qty-btn" type="button" aria-label="Increase quantity"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    <td class="fw-bold text-primary-custom" data-label="Subtotal">৳ 3,700</td>
+                                    <td class="text-end" data-label="Remove"><a href="#" class="cart-remove-btn" title="Remove Item"><i class="fa fa-trash-alt"></i></a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="d-md-flex justify-content-between mt-4">
-                        <div class="input-group mb-3 mb-md-0" style="max-width: 350px;">
-                            <input type="text" class="form-control rounded-0" placeholder="Coupon Code">
-                            <button class="btn btn-outline-dark rounded-0">APPLY</button>
+                    <div class="d-md-flex justify-content-between align-items-center mt-4">
+                        <div class="input-group" style="max-width: 380px;">
+                            <input type="text" class="form-control rounded-0" placeholder="Enter Coupon Code" aria-label="Promo Code">
+                            <button class="btn btn-outline-dark rounded-0 px-4">APPLY COUPON</button>
                         </div>
-                        <button class="btn btn-dark rounded-0 px-4 py-2">UPDATE CART</button>
+                        <button class="btn btn-dark rounded-0 px-4 py-2 mt-3 mt-md-0 fw-medium">UPDATE CART</button>
                     </div>
                 </div>
 
                 <!-- Sidebar Summary -->
-                <div class="col-lg-4 mt-5 mt-lg-0">
-                    <div class="cart-summary shadow-sm">
-                        <h5 class="fw-bold mb-4">ORDER SUMMARY</h5>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="cart-summary">
+                        <h5 class="fw-bold mb-4 border-bottom pb-2">ORDER SUMMARY</h5>
+                        
                         <div class="summary-item">
-                            <span>Subtotal</span>
-                            <span class="fw-bold">৳ 2,450</span>
+                            <span class="text-muted">Cart Subtotal</span>
+                            <span class="fw-bold" id="cartSubtotalVal">৳ 6,150</span>
                         </div>
+                        
+                        <div class="summary-item flex-column align-items-start">
+                            <span class="text-muted mb-2">Shipping Method</span>
+                            <div class="w-100 ps-2">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="shippingOpt" id="shipDhaka" checked>
+                                    <label class="form-check-label small" for="shipDhaka">
+                                        Inside Dhaka: <strong>৳ 60</strong>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="radio" name="shippingOpt" id="shipOutside">
+                                    <label class="form-check-label small" for="shipOutside">
+                                        Outside Dhaka: <strong>৳ 120</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="summary-item">
-                            <span>Shipping</span>
-                            <span>৳ 60</span>
+                            <span class="text-muted">Estimated Tax</span>
+                            <span class="fw-bold">৳ 0</span>
                         </div>
+
                         <div class="summary-item summary-total mt-3">
-                            <span>Total</span>
-                            <span class="text-primary-custom">৳ 2,510</span>
+                            <span>Estimated Total</span>
+                            <span class="text-primary-custom" id="cartGrandTotalVal">৳ 6,210</span>
                         </div>
-                        <a href="checkout.html" class="btn btn-custom w-100 py-3 mt-4">PROCEED TO CHECKOUT</a>
-                        <p class="text-center mt-3 text-muted small"><i class="fa fa-lock me-1"></i> Secure Checkout
-                            Guaranteed</p>
+
+                        <a href="checkout.html" class="btn btn-custom w-100 py-3 mt-4 fw-bold">PROCEED TO CHECKOUT</a>
+                        
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <div class="text-center small text-muted">
+                                <i class="fa fa-shield-alt d-block mb-1"></i>
+                                Secure
+                            </div>
+                            <div class="text-center small text-muted">
+                                <i class="fa fa-truck d-block mb-1"></i>
+                                Fast Delivery
+                            </div>
+                            <div class="text-center small text-muted">
+                                <i class="fa fa-undo d-block mb-1"></i>
+                                30-Day Return
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
