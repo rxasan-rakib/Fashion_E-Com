@@ -1884,7 +1884,7 @@ footer ul li a:hover {
    Track Order Page
 ========================================= */
 .track-hero {
-    padding: 60px 0;
+    padding: 30px 0;
     background-color: var(--light-bg);
     border-bottom: 1px solid #ddd;
 }
@@ -1892,7 +1892,7 @@ footer ul li a:hover {
 .track-box {
     background: #fff;
     padding: 40px;
-    margin-top: -60px;
+    margin-top: 40px;
     border-top: 5px solid var(--primary-color);
     position: relative;
     z-index: 2;
@@ -1963,7 +1963,7 @@ footer ul li a:hover {
 /* --- Global Shop Hero Style --- */
 .shop-hero {
     background: var(--light-bg);
-    padding: 60px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #eee;
 }
 
@@ -2641,4 +2641,12 @@ footer ul li a:hover {
     padding: 40px;
     border-radius: 0;
     text-align: center;
+}
+
+/* Quick View Modal responsive styling for small devices */
+@media (max-width: 767.98px) {
+    #quickViewModal .border.p-2.bg-light {
+        max-width: 220px;
+        margin: 0 auto 15px;
+    }
 }
